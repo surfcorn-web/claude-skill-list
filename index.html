@@ -1090,7 +1090,18 @@ function toast(text) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => t.classList.remove("show"), 4200);
 }
-function scrollToExplorer() { $("#explorer").scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" }); }
+/* 跳過標題和篩選列，直接落在結果：套餐看的是「正在看」那條，其他看第一張卡片。
+   電腦版的篩選列會黏在上方，所以停在它下面；手機版篩選列不會黏住，就直接捲過去。 */
+function scrollToExplorer() {
+  const bar = $("#activePack");
+  const target = !bar.hidden ? bar : ($("#skillGrid").firstElementChild || $("#emptyState"));
+  if (!target) return;
+  const tb = $("#toolbar");
+  const sticky = getComputedStyle(tb).position === "sticky";
+  const gap = sticky ? parseFloat(getComputedStyle(tb).top) + tb.offsetHeight + 16 : 16;
+  const y = target.getBoundingClientRect().top + window.scrollY - gap;
+  window.scrollTo({ top: Math.max(0, y), behavior: reduceMotion() ? "auto" : "smooth" });
+}
 
 function packMix(p) {
   const m = {};
