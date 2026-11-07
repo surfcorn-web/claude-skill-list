@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eef4fa">
+<title>謝小明的 Claude Skill 推薦清單</title>
+<meta name="description" content="給同學的 Claude skill 推薦清單：依任務挑工作流套餐、依功能分類瀏覽，每個 skill 附 1–5 星實用指數、來源和安裝方式。">
+<meta property="og:title" content="謝小明的 Claude Skill 推薦清單">
+<meta property="og:description" content="依任務挑工作流套餐、依功能分類瀏覽，每個 skill 附實用星等、來源和安裝方式。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #08172b;
+  --ink-2: #122846;
+  --muted: #53647d;
+  --desc: #33465f;
+  --paper: #eef4fa;
+  --paper-2: #e1ebf5;
+  --card: #fbfdff;
+  --line: #c6d4e3;
+  --blue: #2f6feb;
+  --blue-dark: #1552b2;
+  --blue-darker: #0d459f;
+  --link: #1552b2;
+  --teal: #5eead4;
+  --teal-ring: #36d4c0;
+  --coral: #ef6b5b;
+  --gold: #b86f00;
+  --star-off: #b9c7d6;
+  --warn: #a8430d;
+  --featured-bg: #e5f1ff;
+  --featured-line: #8fb7ec;
+  --night: #07182d;
+  --footer: #04101f;
+  --toolbar-bg: rgba(238, 244, 250, .97);
+  --nav-bg: #dcecff; --nav-line: #b9d4f6; --nav-ink: #0f4f9e;
+  --hero-bg: radial-gradient(circle at 86% 12%, rgba(69, 181, 255, .2), transparent 28%), radial-gradient(circle at 10% 90%, rgba(94, 234, 212, .17), transparent 30%), linear-gradient(135deg, #f3f9ff 0%, #e7f3ff 56%, #d9ecff 100%);
+  --panel-bg: rgba(251, 253, 255, .92);
+  --shadow: 0 18px 48px rgba(8, 35, 72, .13);
+  --shadow-soft: 0 8px 24px rgba(8, 35, 72, .08);
+  --r-lg: 26px;
+  --r-md: 16px;
+  --r-sm: 10px;
+  --font: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Segoe UI", system-ui, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e6eef9; --ink-2: #cddaf0; --muted: #9db0c9; --desc: #c3d1e6; --paper: #0b1626; --paper-2: #16253b;
+    --card: #101e33; --line: #26384f; --blue: #6c9cff; --blue-dark: #2f6feb; --blue-darker: #2459c8; --link: #8db8ff;
+    --gold: #f2b445; --star-off: #3a4b63; --warn: #ffad73; --featured-bg: #12284a; --featured-line: #2f5fa8;
+    --toolbar-bg: rgba(11, 22, 38, .96); --panel-bg: rgba(16, 30, 51, .94);
+    --nav-bg: #16304f; --nav-line: #2a4a73; --nav-ink: #d3e3ff;
+    --hero-bg: radial-gradient(circle at 86% 12%, rgba(69, 181, 255, .16), transparent 28%), radial-gradient(circle at 10% 90%, rgba(94, 234, 212, .1), transparent 30%), linear-gradient(135deg, #0c1a2e 0%, #0e2140 56%, #11284d 100%);
+    --shadow: 0 18px 48px rgba(0, 0, 0, .45); --shadow-soft: 0 8px 24px rgba(0, 0, 0, .35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #e6eef9; --ink-2: #cddaf0; --muted: #9db0c9; --desc: #c3d1e6; --paper: #0b1626; --paper-2: #16253b;
+  --card: #101e33; --line: #26384f; --blue: #6c9cff; --blue-dark: #2f6feb; --blue-darker: #2459c8; --link: #8db8ff;
+  --gold: #f2b445; --star-off: #3a4b63; --warn: #ffad73; --featured-bg: #12284a; --featured-line: #2f5fa8;
+  --toolbar-bg: rgba(11, 22, 38, .96); --panel-bg: rgba(16, 30, 51, .94);
+  --nav-bg: #16304f; --nav-line: #2a4a73; --nav-ink: #d3e3ff;
+  --hero-bg: radial-gradient(circle at 86% 12%, rgba(69, 181, 255, .16), transparent 28%), radial-gradient(circle at 10% 90%, rgba(94, 234, 212, .1), transparent 30%), linear-gradient(135deg, #0c1a2e 0%, #0e2140 56%, #11284d 100%);
+  --shadow: 0 18px 48px rgba(0, 0, 0, .45); --shadow-soft: 0 8px 24px rgba(0, 0, 0, .35);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 104px; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--font); line-height: 1.62; text-rendering: optimizeLegibility; }
+::selection { color: #08172b; background: var(--teal); }
+* { scrollbar-color: var(--blue) var(--paper-2); scrollbar-width: thin; }
+button, input, select { font: inherit; }
+button, a, input, select { touch-action: manipulation; -webkit-tap-highlight-color: rgba(47, 111, 235, .14); }
+a { color: inherit; text-underline-offset: .2em; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--teal-ring); outline-offset: 3px; }
+.skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; padding: .7rem 1rem; border-radius: 999px; color: #08172b; background: var(--teal); font-weight: 800; }
+.skip-link:focus { top: 1rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* ---------- Hero ---------- */
+.hero { color: var(--ink); background: var(--hero-bg); overflow: hidden; }
+.topbar { width: min(1180px, 100% - 40px); margin: 0 auto; padding: 22px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(21, 82, 178, .18); }
+.brand { display: inline-flex; align-items: center; gap: .7rem; color: var(--ink); text-decoration: none; font-weight: 800; letter-spacing: -.02em; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; color: #fff; background: var(--blue-dark); }
+.brand-mark svg { width: 20px; height: 20px; fill: currentColor; }
+.topbar-actions { display: flex; gap: .45rem; }
+.topbar-actions a { min-height: 40px; padding: .4rem .85rem; display: inline-flex; align-items: center; border: 1px solid var(--nav-line); border-radius: 999px; color: var(--nav-ink); background: var(--nav-bg); text-decoration: none; font-size: .88rem; font-weight: 700; white-space: nowrap; transition: background-color .22s, border-color .22s, color .22s, box-shadow .28s, transform .28s var(--ease-out, ease); }
+.topbar-actions a:hover, .topbar-actions a:focus-visible { border-color: var(--blue-dark); color: #fff; background: var(--blue-dark); box-shadow: 0 6px 16px rgba(21, 82, 178, .22); transform: translateY(-1px); }
+.topbar-actions a:active { transform: scale(.96); transition-duration: .08s; }
+.hero-grid { width: min(1180px, 100% - 40px); min-height: 640px; margin: 0 auto; padding: 72px 0 88px; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(340px, .92fr); align-items: center; gap: clamp(3rem, 7vw, 6rem); }
+.hero h1 { max-width: 720px; margin: 0; font-size: clamp(2.9rem, 6.2vw, 5.6rem); line-height: 1.02; letter-spacing: -.04em; font-weight: 900; text-wrap: balance; }
+.hero-lead { max-width: 60ch; margin: 1.7rem 0 0; color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.14rem); text-wrap: pretty; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+.button { min-height: 48px; padding: .76rem 1.25rem; display: inline-flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 999px; text-decoration: none; font-weight: 800; cursor: pointer; transition: background-color .18s, border-color .18s, color .18s, box-shadow .18s; }
+.button.primary { color: #fff; background: var(--blue-dark); }
+.button.primary:hover { background: var(--blue-darker); box-shadow: 0 8px 22px rgba(21, 82, 178, .2); }
+.button.secondary { color: var(--link); background: rgba(255, 255, 255, .55); border-color: rgba(21, 82, 178, .32); }
+.button.secondary:hover { border-color: var(--blue-dark); background: #fff; }
+.microcopy { max-width: 64ch; margin: 1rem 0 0; color: var(--muted); font-size: .86rem; }
+.microcopy strong { color: var(--link); font-variant-numeric: tabular-nums; }
+.stat-row { max-width: 520px; margin: 1.8rem 0 0; padding: 1rem 0 0; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(21, 82, 178, .18); }
+.stat-row div { display: flex; flex-direction: column-reverse; gap: .05rem; }
+.stat-row dt { color: var(--muted); font-size: .76rem; }
+.stat-row dd { margin: 0; font-size: 1.4rem; font-weight: 900; font-variant-numeric: tabular-nums; }
+.hero-panel { padding: 1.1rem; border: 1px solid rgba(80, 137, 201, .3); border-radius: var(--r-lg); background: var(--panel-bg); box-shadow: 0 30px 72px rgba(38, 93, 147, .16); }
+.route-heading { padding: .7rem .75rem 1rem; }
+.route-heading span { color: var(--link); font-size: .8rem; font-weight: 800; }
+.route-heading h2 { margin: .15rem 0 0; font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.18; letter-spacing: -.025em; text-wrap: balance; }
+.route-list { display: grid; }
+.route-list button { min-height: 64px; padding: .75rem; display: grid; grid-template-columns: minmax(120px, .72fr) 1.28fr auto; gap: 1rem; align-items: center; border: 0; border-top: 1px solid rgba(80, 137, 201, .2); color: var(--ink); background: transparent; text-align: left; cursor: pointer; transition: background-color .16s, color .16s; }
+.route-list button:hover, .route-list button:focus-visible { color: var(--link); background: rgba(47, 111, 235, .1); }
+.route-list strong { font-size: .95rem; }
+.route-list span { color: var(--muted); font-size: .84rem; }
+.route-list em { font-style: normal; color: var(--link); font-size: .8rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.hero-panel > p { margin: .8rem .75rem .4rem; color: var(--muted); font-size: .82rem; }
+
+/* ---------- Sections ---------- */
+.section { width: min(1180px, 100% - 40px); margin: 0 auto; padding: 92px 0; scroll-margin-top: 24px; }
+.starter-section { padding-bottom: 52px; }
+.section-heading { margin-bottom: 2.2rem; display: grid; grid-template-columns: 1fr .72fr; gap: 3rem; align-items: end; }
+.section-heading h2 { max-width: 820px; margin: 0; font-size: clamp(2.2rem, 4.4vw, 4.3rem); line-height: 1.06; letter-spacing: -.04em; font-weight: 900; text-wrap: balance; }
+.section-heading > p { max-width: 58ch; margin: 0; color: var(--muted); text-wrap: pretty; }
+
+.pack-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1rem; }
+.pack-card { min-height: 225px; padding: 1.35rem; display: flex; flex-direction: column; grid-column: span 3; border: 1px solid var(--line); border-radius: var(--r-md); color: var(--ink); background: var(--card); text-align: left; cursor: pointer; transition: border-color .18s, box-shadow .18s, background-color .18s, color .18s; }
+.pack-card:nth-child(-n+2) { grid-column: span 6; }
+.pack-card:hover, .pack-card:focus-visible { border-color: var(--blue); box-shadow: var(--shadow-soft); }
+.pack-card.featured { background: var(--featured-bg); border-color: var(--featured-line); }
+.pack-top { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+.pack-badge { padding: .24rem .6rem; border-radius: 999px; color: #0f4f9e; background: #dcecff; font-size: .74rem; font-weight: 800; }
+.pack-flag { color: var(--link); font-size: .74rem; font-weight: 900; }
+.pack-title { display: block; margin: 1.2rem 0 .35rem; font-size: 1.38rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.3; }
+.pack-desc { display: block; color: var(--muted); font-size: .92rem; text-wrap: pretty; }
+.pack-flow { display: block; margin-top: .85rem; color: var(--link); font-size: .78rem; font-weight: 800; }
+.pack-mix { display: block; margin-top: .3rem; color: var(--muted); font-size: .76rem; }
+.pack-card.active .pack-mix { color: rgba(255, 255, 255, .84); }
+.pack-foot { margin-top: auto; padding-top: 1rem; display: flex; justify-content: space-between; gap: .8rem; color: var(--muted); font-size: .86rem; font-weight: 700; }
+.pack-foot b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.pack-foot .go { color: var(--link); }
+.pack-card.active { color: #fff; background: var(--blue-dark); border-color: var(--blue-dark); }
+.pack-card.active .pack-desc, .pack-card.active .pack-foot, .pack-card.active .pack-foot b { color: rgba(255, 255, 255, .84); }
+.pack-card.active .pack-flow, .pack-card.active .pack-flag, .pack-card.active .pack-foot .go { color: var(--teal); }
+.pack-card.active .pack-badge { color: #06101f; background: var(--teal); }
+
+/* ---------- Explorer ---------- */
+.category-section { padding-top: 24px; padding-bottom: 24px; }
+.cat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; }
+.cat-tile { min-height: 118px; padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: .3rem; border: 1px solid var(--line); border-radius: var(--r-md); color: var(--ink); background: var(--card); text-align: left; cursor: pointer; transition: border-color .18s, box-shadow .18s; }
+.cat-tile:hover, .cat-tile:focus-visible { border-color: var(--blue); box-shadow: var(--shadow-soft); }
+.cat-tile .top { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
+.cat-tile strong { font-size: 1.05rem; }
+.cat-tile em { font-style: normal; color: var(--link); font-weight: 800; font-size: .86rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cat-tile span.d { color: var(--muted); font-size: .86rem; }
+.explorer-section { padding-top: 72px; }
+.explorer-heading { margin-bottom: 1.4rem; }
+.result-count { text-align: right; color: var(--ink) !important; font-weight: 800; font-variant-numeric: tabular-nums; }
+.scope-switch { margin-top: 1.15rem; display: inline-flex; padding: .25rem; border: 1px solid var(--line); border-radius: 999px; background: var(--paper-2); }
+.scope-switch button { min-height: 40px; padding: .45rem .95rem; border: 0; border-radius: 999px; color: var(--muted); background: transparent; cursor: pointer; font-weight: 800; transition: background-color .18s, color .18s; }
+.scope-switch button[aria-pressed="true"] { color: #fff; background: var(--blue-dark); }
+.toolbar { position: sticky; top: 12px; z-index: 20; padding: .8rem; display: grid; grid-template-columns: minmax(240px, 1.7fr) repeat(4, minmax(112px, .58fr)) minmax(215px, .88fr); gap: .65rem; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--toolbar-bg); box-shadow: 0 12px 30px rgba(8, 35, 72, .1); }
+.toolbar label { display: flex; flex-direction: column; gap: .25rem; color: var(--muted); font-size: .74rem; font-weight: 800; min-width: 0; }
+.toolbar input, .toolbar select, .reset-button, .apply-button { width: 100%; min-height: 44px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: var(--card); }
+.toolbar select { padding: 0 .7rem; cursor: pointer; }
+.toolbar input { padding: 0 .8rem 0 2.5rem; }
+.toolbar input::placeholder { color: var(--muted); }
+.toolbar input:focus-visible, .toolbar select:focus-visible { border-color: var(--blue); outline-color: var(--blue); }
+.search-field { position: relative; justify-content: end; }
+.search-field svg { position: absolute; left: .85rem; bottom: .78rem; width: 18px; height: 18px; fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; }
+.toolbar-actions { align-self: end; display: grid; grid-template-columns: 1.35fr 1fr; gap: .45rem; }
+.apply-button, .reset-button { padding: 0 .7rem; cursor: pointer; font-size: .84rem; font-weight: 800; white-space: nowrap; transition: background-color .18s, border-color .18s, color .18s; }
+.apply-button { border-color: var(--blue-dark); color: #fff; background: var(--blue-dark); }
+.apply-button:hover, .apply-button.dirty { border-color: var(--teal); color: #06101f; background: var(--teal); }
+.apply-button kbd { margin-left: .3rem; padding: .05rem .3rem; border: 1px solid; border-radius: 4px; font: inherit; font-size: .66rem; opacity: .8; }
+.reset-button:hover { border-color: var(--coral); color: #a72d20; }
+.active-pack { margin-top: 1rem; padding: .8rem 1rem; display: flex; justify-content: space-between; gap: 1rem; align-items: center; border-radius: var(--r-sm); color: #fff; background: var(--blue-dark); }
+.active-pack div { display: flex; flex-wrap: wrap; gap: .35rem 1rem; align-items: baseline; }
+.active-pack span { color: rgba(255, 255, 255, .78); font-size: .86rem; }
+.active-pack button { min-height: 40px; padding: .4rem .8rem; border: 1px solid rgba(255, 255, 255, .3); border-radius: 8px; color: var(--teal); background: transparent; cursor: pointer; font-weight: 800; white-space: nowrap; }
+
+.skill-grid { margin-top: 1.2rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.skill-card { min-width: 0; min-height: 340px; padding: 1.25rem; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--card); box-shadow: 0 2px 0 rgba(8, 35, 72, .04); transition: border-color .18s, box-shadow .18s; }
+.skill-card:hover { border-color: rgba(47, 111, 235, .58); box-shadow: var(--shadow-soft); }
+.skill-card[data-rating="5"] { border-top: 4px solid var(--blue); }
+.skill-card[data-rating="1"] { border-style: dashed; }
+.skill-card.fresh { animation: fadeIn .35s ease-out backwards; animation-delay: calc(var(--i, 0) * 25ms); }
+.card-topline { display: flex; align-items: center; justify-content: space-between; gap: .6rem; flex-wrap: wrap; }
+.badge-row { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; }
+.source-badge, .recommend-badge { padding: .25rem .55rem; border-radius: 999px; color: var(--muted); background: var(--paper-2); font-size: .72rem; font-weight: 800; }
+.recommend-badge { color: #06101f; background: var(--teal); }
+.stars { display: inline-flex; align-items: center; white-space: nowrap; }
+.stars .on { color: var(--gold); font-size: 1rem; letter-spacing: .04em; }
+.stars .off { color: var(--star-off); font-size: 1rem; letter-spacing: .04em; }
+.stars b { margin-left: .4rem; padding: .16rem .38rem; border-radius: 6px; color: var(--ink); background: var(--paper-2); font-size: .72rem; font-variant-numeric: tabular-nums; }
+.card-heading { margin-top: 1rem; }
+.card-heading h3 { margin: 0; font-size: 1.14rem; letter-spacing: -.01em; line-height: 1.4; }
+.skill-id { margin: .1rem 0 0; font-family: var(--mono); font-size: .82rem; color: var(--muted); overflow-wrap: anywhere; }
+.category-label { margin: .48rem 0 .7rem; color: var(--link); font-size: .8rem; font-weight: 800; }
+.description { margin: 0; display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; color: var(--desc); font-size: .93rem; text-wrap: pretty; }
+.skill-card.open .description { display: block; -webkit-line-clamp: unset; line-clamp: none; }
+.detail-toggle { align-self: flex-start; min-height: 40px; margin-top: .55rem; padding: .3rem 0; border: 0; color: var(--link); background: transparent; cursor: pointer; font-weight: 800; font-size: .82rem; text-decoration: underline; text-underline-offset: .2em; }
+.card-meta { display: grid; gap: .55rem; padding-top: .35rem; }
+.card-meta p { margin: 0; display: grid; grid-template-columns: 64px 1fr; gap: .65rem; font-size: .82rem; }
+.card-meta span { color: var(--muted); }
+.card-meta strong { overflow-wrap: anywhere; font-weight: 700; }
+.card-meta strong.warn { color: var(--warn); }
+.rating-note { margin-top: .75rem; padding-top: .7rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
+.card-actions { margin-top: auto; padding-top: 1rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .42rem; }
+.copy-button, .source-button, .install-button { min-height: 44px; padding: .4rem .5rem; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 9px; color: var(--link); background: transparent; cursor: pointer; font-size: .8rem; font-weight: 800; text-align: center; text-decoration: none; transition: background-color .18s, border-color .18s, color .18s; }
+.copy-button:hover, .source-button:hover { color: #fff; background: var(--blue-dark); border-color: var(--blue-dark); }
+.install-button { border-color: var(--blue-dark); color: #fff; background: var(--blue-dark); }
+.source-button.disabled, .source-button.disabled:hover { border-color: var(--line); color: var(--muted); background: var(--paper-2); cursor: default; }
+.install-button:hover { border-color: var(--teal); color: #06101f; background: var(--teal); }
+.copy-button.done { border-color: var(--teal); color: #06101f; background: var(--teal); }
+.load-more-row { padding: 2rem 0 0; text-align: center; }
+.load-more { min-height: 48px; padding: .7rem 1.3rem; border: 1px solid var(--blue-dark); border-radius: 999px; color: var(--link); background: transparent; cursor: pointer; font-weight: 800; transition: background-color .18s, color .18s; }
+.load-more:hover { color: #fff; background: var(--blue-dark); }
+.empty-state { padding: 5rem 1rem; text-align: center; color: var(--muted); }
+.empty-state h3 { margin: 0 0 .25rem; color: var(--ink); }
+.empty-state .reset-button { width: auto; min-width: 160px; margin-top: 1rem; padding: .6rem 1rem; }
+
+/* ---------- Method & install ---------- */
+.method-section { padding-top: 50px; padding-bottom: 40px; }
+.method-card { padding: clamp(2rem, 5vw, 4.5rem); display: grid; grid-template-columns: .72fr 1.28fr; gap: 4rem; border-radius: var(--r-lg); color: #fff; background: var(--night); }
+.method-card h2 { max-width: 500px; margin: 0; font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.08; letter-spacing: -.04em; font-weight: 900; text-wrap: balance; }
+.method-card > div:first-child p { max-width: 52ch; color: rgba(226, 240, 255, .72); }
+.rating-rubric { display: grid; gap: .6rem; }
+.rating-rubric > div { padding: .75rem 0; display: grid; grid-template-columns: 165px 90px 1fr; gap: .8rem; align-items: baseline; border-bottom: 1px solid rgba(147, 197, 253, .18); }
+.rubric-stars { display: inline-flex; align-items: center; gap: .6rem; color: #ffc24d; font-size: .92rem; letter-spacing: .04em; }
+.rubric-stars em { font-style: normal; color: rgba(255, 255, 255, .22); }
+.rubric-stars b { min-width: 42px; padding: .18rem .32rem; border-radius: 6px; color: #06101f; background: var(--teal); font-size: .7rem; font-variant-numeric: tabular-nums; letter-spacing: 0; text-align: center; }
+.rating-rubric strong { font-size: .9rem; }
+.rating-rubric p { margin: 0; color: rgba(226, 240, 255, .72); font-size: .86rem; }
+.method-note { max-width: 900px; margin: 1.4rem auto 0; color: var(--muted); text-align: center; font-size: .88rem; }
+.install-section { padding-top: 60px; padding-bottom: 56px; }
+.page-end { width: min(1180px, 100% - 40px); margin: 0 auto 72px; padding: 1.4rem 1.6rem; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; border: 1px solid var(--featured-line); border-radius: var(--r-md); background: linear-gradient(120deg, var(--featured-bg), var(--card)); box-shadow: var(--shadow-soft); }
+.page-end h2 { margin: 0; font-size: 1.12rem; letter-spacing: -.01em; }
+.page-end p { max-width: 66ch; margin: .25rem 0 0; color: var(--muted); font-size: .86rem; text-wrap: pretty; }
+.page-end-actions { display: flex; gap: .7rem; flex-shrink: 0; }
+.page-end .button { gap: .5rem; min-width: 132px; }
+.page-end .button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; transition: transform .35s var(--ease-out); }
+.page-end .button.secondary { border-color: var(--featured-line); background: var(--card); }
+.page-end .button.secondary:hover { border-color: var(--blue); }
+#goHome:hover svg, #goHome:focus-visible svg { transform: translateX(-4px); }
+#goTop:hover svg, #goTop:focus-visible svg { transform: translateY(-4px); }
+#heroTitle:focus { outline: none; }
+.install-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.install-card { padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--card); }
+.install-card .source-badge { display: inline-block; }
+.install-card h3 { margin: .9rem 0 .5rem; font-size: 1.22rem; }
+.install-card p, .install-card ol { margin: 0 0 .7rem; color: var(--desc); font-size: .93rem; }
+.install-card ol { padding-left: 1.25rem; }
+.install-card li { margin-bottom: .35rem; }
+.install-card .small { color: var(--muted); font-size: .86rem; }
+.install-card a { color: var(--link); font-weight: 700; }
+footer { padding: 3rem max(20px, 50% - 590px); display: flex; justify-content: space-between; gap: 2rem; color: rgba(226, 240, 255, .72); background: var(--footer); }
+footer strong { color: #fff; }
+footer p { margin: .25rem 0 0; font-size: .86rem; max-width: 52ch; }
+.toast { position: fixed; right: 20px; bottom: 20px; z-index: 100; max-width: min(420px, 100vw - 40px); padding: .85rem 1rem; border: 1px solid rgba(94, 234, 212, .7); border-radius: 12px; color: #fff; background: #08172b; box-shadow: var(--shadow); font-size: .88rem; font-weight: 700; opacity: 0; transform: translateY(10px); pointer-events: none; transition: opacity .22s, transform .22s; }
+.toast.show { opacity: 1; transform: none; }
+
+/* ---------- Motion ---------- */
+:root { --ease-out: cubic-bezier(.22, .8, .24, 1); --ease-spring: cubic-bezier(.34, 1.45, .64, 1); }
+
+/* One orchestrated entrance for the hero */
+.hero { position: relative; isolation: isolate; }
+.hero::before { content: ""; position: absolute; z-index: -1; top: -14vw; right: -10vw; width: min(52vw, 680px); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(94, 234, 212, .2), rgba(69, 181, 255, .1) 46%, transparent 70%); pointer-events: none; animation: drift 26s ease-in-out infinite alternate; }
+.hero-copy > * { animation: riseIn .85s var(--ease-out) backwards; }
+.hero-copy > :nth-child(2) { animation-delay: .08s; }
+.hero-copy > :nth-child(3) { animation-delay: .16s; }
+.hero-copy > :nth-child(4) { animation-delay: .22s; }
+.hero-copy > :nth-child(5) { animation-delay: .28s; }
+.hero-panel { animation: panelIn .9s var(--ease-out) .12s backwards; }
+.route-list > button, .route-all, .route-cats a { animation: rowIn .55s var(--ease-out) backwards; animation-delay: calc(.38s + var(--i, 0) * 55ms); }
+
+/* Top navigation: underline grows from the left */
+.brand-mark { transition: transform .45s var(--ease-spring); }
+.brand:hover .brand-mark { transform: rotate(90deg); }
+
+/* Buttons: lift on hover, settle on press, a light sweep on the primary */
+.button { position: relative; overflow: hidden; transition: background-color .2s, border-color .2s, color .2s, box-shadow .28s, transform .28s var(--ease-out); }
+.button:hover { transform: translateY(-2px); }
+.button:active { transform: translateY(0) scale(.98); transition-duration: .08s; }
+.button.primary::after { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 32%, rgba(255, 255, 255, .3) 50%, transparent 68%); transform: translateX(-130%); pointer-events: none; }
+.button.primary:hover::after { transform: translateX(130%); transition: transform .85s var(--ease-out); }
+
+/* Route rows: a tint sweeps in, an accent bar grows, the title steps forward */
+.route-list button { position: relative; isolation: isolate; }
+.route-list button::before, .route-all::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: linear-gradient(90deg, rgba(47, 111, 235, .14), rgba(47, 111, 235, .03)); transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease-out); }
+.route-list button::after { content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 3px; border-radius: 3px; background: var(--blue); transform: scaleY(0); transition: transform .32s var(--ease-out) .05s; }
+.route-list button:hover, .route-list button:focus-visible { background: transparent; }
+.route-list button:hover::before, .route-list button:focus-visible::before, .route-all:hover::before, .route-all:focus-visible::before { transform: scaleX(1); }
+.route-list button:hover::after, .route-list button:focus-visible::after { transform: scaleY(1); }
+.route-list strong, .route-all strong { display: inline-block; transition: transform .35s var(--ease-out); }
+.route-list button:hover strong, .route-list button:focus-visible strong, .route-all:hover strong, .route-all:focus-visible strong { transform: translateX(6px); }
+.route-list em, .route-all em { justify-self: end; padding: .14rem .5rem; border-radius: 999px; transition: background-color .25s, color .25s, transform .35s var(--ease-spring); }
+.route-list button:hover em, .route-list button:focus-visible em, .route-all:hover em, .route-all:focus-visible em { color: #fff; background: var(--blue-dark); transform: translateX(-2px); }
+.route-list button:active, .route-all:active { transform: scale(.992); }
+
+/* Full list entry + category links in the hero panel */
+.route-all { margin-top: .55rem; min-height: 64px; padding: .75rem; display: grid; grid-template-columns: minmax(120px, .72fr) 1.28fr auto; gap: 1rem; align-items: center; position: relative; isolation: isolate; overflow: hidden; border: 1px solid var(--featured-line); border-radius: 14px; color: var(--ink); background: var(--featured-bg); text-decoration: none; transition: border-color .2s, box-shadow .3s, transform .2s var(--ease-out); }
+.route-all:hover, .route-all:focus-visible { border-color: var(--blue); box-shadow: 0 10px 26px rgba(21, 82, 178, .14); }
+.route-all strong { font-size: .95rem; }
+.route-all span { color: var(--muted); font-size: .84rem; }
+.route-all em { font-style: normal; color: var(--link); font-size: .8rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.route-cats { margin: .7rem .15rem 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.route-cats a { min-height: 40px; padding: .3rem .75rem; display: inline-flex; align-items: center; gap: .4rem; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-2); background: var(--card); font-size: .8rem; font-weight: 700; text-decoration: none; transition: border-color .2s, color .2s, box-shadow .28s, transform .28s var(--ease-out); }
+.route-cats a em { font-style: normal; color: var(--link); font-weight: 800; font-variant-numeric: tabular-nums; }
+.route-cats a:hover, .route-cats a:focus-visible { border-color: var(--blue); color: var(--link); box-shadow: var(--shadow-soft); transform: translateY(-2px); }
+.route-cats a:active { transform: translateY(0) scale(.97); transition-duration: .08s; }
+
+/* Cards lift when you point at them */
+.pack-card, .cat-tile, .skill-card, .install-card { transition: border-color .2s, box-shadow .3s, background-color .2s, color .2s, transform .35s var(--ease-out); }
+.pack-card:hover, .pack-card:focus-visible, .cat-tile:hover, .cat-tile:focus-visible { transform: translateY(-3px); }
+.pack-card:active, .cat-tile:active { transform: translateY(-1px) scale(.99); transition-duration: .1s; }
+.pack-card.active { animation: settle .45s var(--ease-spring); }
+.pack-flow { transition: letter-spacing .35s var(--ease-out); }
+.pack-card:hover .pack-flow { letter-spacing: .02em; }
+.pack-foot .go { transition: transform .3s var(--ease-out); }
+.pack-card:hover .pack-foot .go { transform: translateX(4px); }
+.cat-tile { position: relative; overflow: hidden; }
+.cat-tile::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--teal)); transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease-out); }
+.cat-tile:hover::after, .cat-tile:focus-visible::after { transform: scaleX(1); }
+.skill-card:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(8, 35, 72, .11); }
+.skill-card.fresh { animation: cardIn .5s var(--ease-out) backwards; animation-delay: calc(min(var(--i, 0), 11) * 38ms); }
+.skill-card.fresh .stars .on { animation: starsIn .7s var(--ease-out) backwards; animation-delay: calc(.18s + min(var(--i, 0), 11) * 38ms); }
+.card-details:not([hidden]) { animation: openDown .32s var(--ease-out); }
+
+/* Small controls answer every press */
+.copy-button, .source-button, .install-button, .load-more, .apply-button, .reset-button, .detail-toggle { transition: background-color .2s, border-color .2s, color .2s, box-shadow .25s, transform .25s var(--ease-out); }
+.copy-button:hover, .source-button:not(.disabled):hover, .install-button:hover, .load-more:hover { transform: translateY(-1px); }
+.copy-button:active, .source-button:not(.disabled):active, .install-button:active, .load-more:active, .apply-button:active, .reset-button:active { transform: scale(.96); transition-duration: .08s; }
+.copy-button.done { animation: settle .4s var(--ease-spring); }
+.scope-switch button { transition: background-color .25s, color .25s, box-shadow .3s; }
+.scope-switch button[aria-pressed="true"] { box-shadow: 0 6px 16px rgba(21, 82, 178, .24); animation: settle .4s var(--ease-spring); }
+.apply-button.dirty { animation: ping 1.9s ease-out infinite; }
+.active-pack:not([hidden]) { animation: openDown .38s var(--ease-out); }
+.toast { transform: translateY(14px) scale(.96); transition: opacity .25s, transform .45s var(--ease-spring); }
+.toast.show { transform: none; }
+
+@keyframes riseIn { from { opacity: 0; transform: translateY(16px); } }
+@keyframes panelIn { from { opacity: 0; transform: translateY(22px) scale(.985); } }
+@keyframes rowIn { from { opacity: 0; transform: translateX(-10px); } }
+@keyframes cardIn { from { opacity: 0; transform: translateY(12px) scale(.99); } }
+@keyframes starsIn { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes openDown { from { opacity: 0; transform: translateY(-6px); } }
+@keyframes settle { 0% { transform: scale(.94); } 100% { transform: scale(1); } }
+@keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(94, 234, 212, .65); } 70%, 100% { box-shadow: 0 0 0 9px rgba(94, 234, 212, 0); } }
+@keyframes drift { to { transform: translate(-7vw, 6vw) scale(1.12); } }
+
+/* Whole-page ambient background: two soft glow layers drifting at different speeds */
+:root { --glow-a: rgba(47, 111, 235, .11); --glow-b: rgba(94, 234, 212, .13); --glow-c: rgba(69, 181, 255, .1); }
+:root[data-theme="dark"] { --glow-a: rgba(47, 111, 235, .16); --glow-b: rgba(94, 234, 212, .07); --glow-c: rgba(69, 181, 255, .08); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --glow-a: rgba(47, 111, 235, .16); --glow-b: rgba(94, 234, 212, .07); --glow-c: rgba(69, 181, 255, .08); } }
+body::before, body::after { content: ""; position: fixed; z-index: -1; inset: -25vmax; pointer-events: none; will-change: transform; }
+body::before { background: radial-gradient(38vmax 30vmax at 22% 30%, var(--glow-a), transparent 70%), radial-gradient(34vmax 28vmax at 78% 72%, var(--glow-b), transparent 70%); animation: bgDriftA 38s ease-in-out infinite alternate; }
+body::after { background: radial-gradient(30vmax 26vmax at 70% 24%, var(--glow-c), transparent 70%), radial-gradient(26vmax 22vmax at 30% 80%, var(--glow-a), transparent 72%); animation: bgDriftB 52s ease-in-out infinite alternate; }
+@keyframes bgDriftA { 0% { transform: translate3d(0, 0, 0) rotate(0deg); } 50% { transform: translate3d(6vmax, -4vmax, 0) rotate(8deg); } 100% { transform: translate3d(-5vmax, 5vmax, 0) rotate(-6deg); } }
+@keyframes bgDriftB { 0% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(-7vmax, 3vmax, 0) scale(1.08); } 100% { transform: translate3d(4vmax, -6vmax, 0) scale(.96); } }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, ::before, ::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-delay: 0ms !important; }
+  .hero::before, .apply-button.dirty, body::before, body::after { animation: none !important; }
+  .button:hover, .pack-card:hover, .cat-tile:hover, .skill-card:hover, .route-cats a:hover { transform: none !important; }
+}
+@media (max-width: 1050px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 3rem; padding-top: 60px; min-height: 0; }
+  .hero-panel { max-width: 720px; width: 100%; }
+  .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .toolbar { position: static; grid-template-columns: 1.5fr repeat(2, minmax(0, 1fr)); }
+  .toolbar-actions { grid-column: span 2; }
+  .pack-card { grid-column: span 6; }
+  .cat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .install-grid { grid-template-columns: minmax(0, 1fr); }
+  html { scroll-padding-top: 20px; }
+}
+@media (max-width: 900px) {
+  .topbar-actions { gap: .3rem; }
+  .topbar-actions a { padding: .35rem .62rem; font-size: .82rem; }
+}
+@media (max-width: 760px) {
+  .topbar, .hero-grid, .section { width: min(100% - 28px, 1180px); }
+  .topbar-actions { display: none; }
+  .hero-grid { padding: 44px 0 64px; }
+  .hero h1 { font-size: clamp(2.5rem, 12vw, 4.4rem); }
+  .route-list button { grid-template-columns: 1fr auto; gap: .1rem .6rem; }
+  .route-list button span { grid-column: 1; grid-row: 2; }
+  .route-list button em { grid-column: 2; grid-row: 1 / 3; }
+  .route-all { grid-template-columns: 1fr auto; gap: .1rem .6rem; }
+  .route-all span { grid-column: 1; grid-row: 2; }
+  .route-all em { grid-column: 2; grid-row: 1 / 3; }
+  .section { padding: 64px 0; }
+  .section-heading { grid-template-columns: 1fr; gap: 1rem; }
+  .result-count { text-align: left; }
+  .pack-grid { grid-template-columns: minmax(0, 1fr); }
+  .pack-card, .pack-card:nth-child(-n+2) { grid-column: auto; min-height: 0; }
+  .cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skill-grid { grid-template-columns: minmax(0, 1fr); }
+  .skill-card { min-height: 0; }
+  .toolbar { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .search-field, .toolbar-actions { grid-column: 1 / -1; }
+  .toolbar input, .toolbar select { font-size: 16px; }
+  .active-pack { align-items: flex-start; flex-direction: column; }
+  .method-card { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.25rem; }
+  .rating-rubric > div { grid-template-columns: 165px 1fr; }
+  .rating-rubric p { grid-column: 1 / -1; }
+  .install-grid { grid-template-columns: minmax(0, 1fr); }
+  .page-end { width: min(100% - 28px, 1180px); margin-bottom: 56px; padding: 1.2rem; flex-direction: column; align-items: stretch; }
+  .page-end-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .page-end .button { min-width: 0; }
+  footer { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-panel { padding: .7rem; }
+  .stat-row { gap: .7rem; }
+  .stat-row dd { font-size: 1.2rem; }
+  .toolbar { grid-template-columns: minmax(0, 1fr); }
+  .search-field, .toolbar-actions { grid-column: auto; }
+  .card-actions { grid-template-columns: minmax(0, 1fr); }
+  .rating-rubric > div { grid-template-columns: 1fr; gap: .25rem; }
+  .rating-rubric p { grid-column: auto; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#explorer">跳到 skill 搜尋</a>
+
+<header class="hero" id="top">
+  <nav class="topbar" aria-label="主要導覽">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5h6v6H5zM13 5h6v6h-6zM5 13h6v6H5zM13 13h6v6h-6z"/></svg></span>謝小明的 Claude Skill 推薦清單</a>
+    <div class="topbar-actions">
+      <a href="#starter-packs">工作流套餐</a>
+      <a href="#categories">功能分類</a>
+      <a href="#explorer">Skill 清單</a>
+      <a href="#method">評分方式</a>
+      <a href="#install">安裝方式</a>
+    </div>
+  </nav>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <h1 id="heroTitle" tabindex="-1">把 Claude skills 變成能直接開工的工具箱。</h1>
+      <p class="hero-lead">不用背名稱，也不用一次裝滿。先說你要完成什麼，把真正用得上的工作流排在前面，再用星等、來源和注意事項幫你做最後判斷。</p>
+      <div class="hero-cta">
+        <button class="button primary" type="button" id="showFiveStar">看 5 星 skill（6 個）</button>
+        <a class="button secondary" href="#starter-packs" id="comparePacks">比較 6 種工作流</a>
+      </div>
+      <p class="microcopy">目前收錄 <strong id="headlineTotal">88</strong> 個 skill：<strong id="ghCount">33</strong> 個獨立 skill（GitHub <span id="ghOnly">32</span>、本站自製 <span id="selfCount">1</span>），加上 <span id="pluginKinds">3</span> 個 plugin 內含的 <strong id="pluginCount">55</strong> 個（不含 Claude 內建）。<span id="packTotal">6</span> 個工作流套餐從中挑了 <strong id="packUnique">28</strong> 個最常用的，其餘都在下方的完整清單。</p>
+      <dl class="stat-row" aria-label="Skill 統計摘要">
+        <div><dt>獨立 skill</dt><dd id="statGh">33</dd></div>
+        <div><dt><span id="statPluginKinds">3</span> 個 plugin 內含</dt><dd id="statPlugin">55</dd></div>
+        <div><dt>5★ 首選</dt><dd id="fiveStarCount">6</dd></div>
+      </dl>
+    </div>
+    <aside class="hero-panel" aria-labelledby="routeTitle">
+      <div class="route-heading">
+        <span>推薦起點</span>
+        <h2 id="routeTitle">今天想完成哪一件事？</h2>
+      </div>
+      <div class="route-list" id="routeList"></div>
+      <a class="route-all" href="#all" id="routeAll">
+        <strong>完整清單</strong>
+        <span>全部攤開，依分類、星等篩選</span>
+        <em id="routeAllCount">全部 88 個</em>
+      </a>
+      <nav class="route-cats" id="routeCats" aria-label="依分類打開完整清單"></nav>
+      <p>如果你在做課程專題，先從「系統網頁包」開始。</p>
+    </aside>
+  </div>
+</header>
+
+<main>
+  <section class="section starter-section" id="starter-packs" aria-labelledby="packsTitle">
+    <div class="section-heading">
+      <h2 id="packsTitle">先選任務，再看需要哪些 skills。</h2>
+      <p id="packsNote">每一包只放能串成完整流程的幾個 skill，點一下，下面的清單就只留這一包。6 包加起來 33 個位置，其中Reels 腳本、Reels 成片、繁中去 AI 味、逼問到想清楚會在不只一包出現，所以實際是 28 個不重複的 skill；收錄的 88 個裡，其他 60 個在下方完整清單。</p>
+    </div>
+    <div class="pack-grid" id="packGrid"></div>
+  </section>
+
+  <section class="section category-section" id="categories" aria-labelledby="catTitle">
+    <div class="section-heading">
+      <h2 id="catTitle">或依功能分類看全部。</h2>
+      <p id="catNote">收錄的 88 個分成 8 類，點一類就在下面只顯示那一類。分類是全部，套餐是挑過的精選，所以數字不一樣：「社群行銷」共 18 個，社群經營包只用了其中 6 個，另外 1 個來自別的分類；「簡報」共 3 個，簡報企劃包只用了其中 2 個，另外 3 個來自別的分類。</p>
+    </div>
+    <div class="cat-grid" id="catGrid"></div>
+  </section>
+
+  <section class="section explorer-section" id="explorer" aria-labelledby="explorerTitle">
+    <div class="section-heading explorer-heading">
+      <div>
+        <h2 id="explorerTitle">搜尋、比較，再決定要不要安裝。</h2>
+        <div class="scope-switch" role="group" aria-label="清單範圍">
+          <button id="showRecommended" type="button" aria-pressed="true">推薦核心</button>
+          <button id="showAll" type="button" aria-pressed="false">完整清單</button>
+        </div>
+      </div>
+      <p id="resultCount" class="result-count" aria-live="polite"></p>
+    </div>
+    <form class="toolbar" id="toolbar" role="search" aria-label="Skill 篩選器">
+      <label class="search-field">
+        <span class="sr-only">搜尋 skill</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.2-4.2m1.2-5.3A6.5 6.5 0 1 1 5 11.5a6.5 6.5 0 0 1 13 0Z"/></svg>
+        <input id="searchInput" name="q" type="search" placeholder="搜尋名稱、用途或注意事項…" autocomplete="off" enterkeyhint="search">
+      </label>
+      <label>分類<select id="categoryFilter" name="category"></select></label>
+      <label>最低星等
+        <select id="ratingFilter" name="rating">
+          <option value="0">全部星等</option>
+          <option value="5">5 星</option>
+          <option value="4">4 星以上</option>
+          <option value="3">3 星以上</option>
+          <option value="2">2 星以上</option>
+        </select>
+      </label>
+      <label>來源
+        <select id="sourceFilter" name="source">
+          <option value="all">全部來源</option>
+          <option value="gh">獨立 skill（GitHub）</option>
+        </select>
+      </label>
+      <label>排序
+        <select id="sortFilter" name="sort">
+          <option value="rating">實用指數</option>
+          <option value="name">名稱 A–Z</option>
+          <option value="category">分類</option>
+        </select>
+      </label>
+      <div class="toolbar-actions">
+        <button class="apply-button" id="applyFilters" type="submit">套用篩選<kbd>Enter</kbd></button>
+        <button class="reset-button" id="resetFilters" type="button">清除</button>
+      </div>
+    </form>
+    <div class="active-pack" id="activePack" hidden>
+      <div><strong id="activePackName"></strong><span id="activePackInfo"></span></div>
+      <button type="button" id="clearPack">看完整清單</button>
+    </div>
+    <div class="skill-grid" id="skillGrid"></div>
+    <div class="load-more-row" id="loadMoreRow" hidden><button class="load-more" id="loadMore" type="button"></button></div>
+    <div class="empty-state" id="emptyState" hidden>
+      <h3>沒有符合的 skill</h3>
+      <p>換個關鍵字，或放寬上面的條件。</p>
+      <button class="reset-button" id="emptyReset" type="button">清除所有條件</button>
+    </div>
+  </section>
+
+  <section class="section method-section" id="method" aria-labelledby="methodTitle">
+    <div class="method-card">
+      <div>
+        <h2 id="methodTitle">星等衡量的是「今天能不能用」。</h2>
+        <p>評分角度是在職專班同學的日常：做系統和網頁專題、寫報告、做簡報。看使用頻率、設定成本和成果明不明確。</p>
+      </div>
+      <div class="rating-rubric" id="rubric"></div>
+    </div>
+    <p class="method-note">這不是品質認證；如果你的課程或工具不同，低星的 skill 仍可能很有用。Claude 內建的 skill（Word、Excel、PPT、PDF 等）不需要安裝，所以不列在這份清單裡。</p>
+  </section>
+
+  <section class="section install-section" id="install" aria-labelledby="installTitle">
+    <div class="section-heading">
+      <h2 id="installTitle">看來源，三種裝法。</h2>
+      <p>最快的方法是按卡片上的「直接安裝」：會開新的 Claude 對話並帶入安裝指令，指令也同時複製好了，沒帶入就貼上送出。</p>
+    </div>
+    <div class="install-grid">
+      <div class="install-card">
+        <span class="source-badge">GitHub</span>
+        <h3>上傳 ZIP</h3>
+        <ol>
+          <li>按卡片上的「查看來源」，下載 ZIP。</li>
+          <li>解壓縮，把放著 SKILL.md 的資料夾單獨壓成 ZIP，資料夾名稱要跟 skill 名稱一樣；scripts、data 等附屬檔案要一起放進去。</li>
+          <li>到 Customize → Skills，按「+」→ Create skill → Upload a skill，上傳 ZIP。</li>
+        </ol>
+        <p class="small">上傳的 skill 只有你自己看得到。官方說明：<a href="https://support.claude.com/en/articles/12512180-using-skills-in-claude" target="_blank" rel="noopener">Using Skills in Claude</a></p>
+      </div>
+      <div class="install-card">
+        <span class="source-badge">自製 skill</span>
+        <h3>複製指令，貼給 Claude</h3>
+        <p>本站自己寫的 skill（目前是 Reels 成片）沒有放在 GitHub。按卡片上的「複製安裝指令」，整份 SKILL.md 會一起複製；在新開的 Claude 對話貼上送出，照提示存成 skill。</p>
+        <p class="small">需要先在設定裡開啟程式碼執行與檔案建立。</p>
+      </div>
+      <div class="install-card">
+        <span class="source-badge">Plugin</span>
+        <h3>一次裝好一整包</h3>
+        <p>在 Claude 對話裡說「幫我安裝 Superpowers plugin」，或到 <a href="https://claude.com/marketplace" target="_blank" rel="noopener">claude.com/marketplace</a> 搜尋名稱。</p>
+        <p class="small">清單裡有三個 plugin：Skills For Real Engineers（38 個）、Superpowers（15 個）、ffmpeg-llm（2 個）。前兩個主要給寫程式的人。能不能裝要看你的方案和 App 版本。</p>
+      </div>
+    </div>
+  </section>
+  <section class="page-end" aria-labelledby="pageEndTitle">
+    <div>
+      <h2 id="pageEndTitle">想重新開始，還是保留目前的篩選？</h2>
+      <p>「回首頁」會清掉篩選和套餐，從推薦起點重選；「回到上方」只捲回最上面，篩選都還在。</p>
+    </div>
+    <div class="page-end-actions">
+      <button class="button secondary" type="button" id="goHome"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>回首頁</button>
+      <button class="button primary" type="button" id="goTop">回到上方<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <strong>謝小明的 Claude Skill 推薦清單</strong>
+    <p>把選擇變簡單，把工具用在真正需要的地方。</p>
+  </div>
+  <p id="footerMeta">資料更新：2026-11-07，共 88 個 skill：33 個獨立 skill（GitHub 32、本站自製 1）＋3 個 plugin 內含 55 個，不含 Claude 內建。</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="text/plain" id="skill-reels-maker">
+---
+name: reels-maker
+description: 把使用者上傳的影片片段或照片剪成 9:16 直式短影音成片（IG／FB Reels、YouTube Shorts、TikTok）：依腳本排段落、裁成直式、燒繁體中文字幕與開頭字卡、音量標準化，輸出可直接上傳的 MP4、封面和字幕檔。使用者說「做 Reels」「剪成直式短影音」「幫我出片」「上字幕」「做 Shorts」時使用；只要腳本、不要成片時改用 viral-reel-generator。
+---
+
+# Reels Maker
+
+交付物：一支可直接上傳的直式 MP4、一張封面 JPG、一份 SRT 字幕檔，以及一段貼文說明。
+
+## 0. 動手前先確認
+
+- **素材**：只用使用者上傳的影片或照片。沒有素材就停下來請對方上傳，不用網路圖片或 AI 生成的人物冒充實拍。
+- **腳本**：已有腳本（例如 viral-reel-generator 的輸出）就照用；沒有就先寫逐段腳本（每段：秒數、畫面、字幕或口白），給使用者確認後再剪。
+- **平台與長度**：預設 IG／FB Reels，15–45 秒。需要時再出 YouTube Shorts 或 TikTok 版本。各平台長度上限常改，以上傳當下為準。
+- **音樂**：只放使用者提供、確定可以商用的音樂。來源不明的流行歌不放，請使用者上傳時從平台音樂庫加。
+
+## 1. 檢查環境
+
+```bash
+ffmpeg -version | head -1
+fc-list :lang=zh-tw family | head -5
+```
+
+- 沒有 ffmpeg：請使用者確認 Settings → Capabilities 的程式碼執行（Code execution and file creation）有打開。
+- 沒有繁中字型：請使用者上傳一個 .otf 或 .ttf（例如 Google Fonts 的 Noto Sans TC），放進一個資料夾，後面的 `fontsdir=` 指到那裡。沒有中文字的字型會讓字幕變成方塊。
+
+## 2. 看素材
+
+```bash
+ffprobe -v error -show_entries stream=codec_type,width,height,r_frame_rate:format=duration -of compact=p=0 INPUT
+```
+
+記下每個檔的長度、直式或橫式、有沒有聲音。手機直拍常帶旋轉標記，ffmpeg 會自動轉正，不用另外處理。
+
+## 3. 先排剪輯表，給使用者確認
+
+把腳本每一段對到素材和時間點：
+
+| 段 | 素材 | 入點 | 出點 | 畫面上的字 |
+|---|---|---|---|---|
+
+各段長度加總要等於目標長度。使用者說可以再開始算圖；算圖慢，先對齊比重做省時間。
+
+## 4. 每段統一成 1080×1920、30fps、有聲音軌
+
+所有段落都要同樣的解析度、幀率、像素格式和音訊格式，後面才能直接串接。
+
+**直式影片**（填滿並裁掉多出的部分）：
+
+```bash
+ffmpeg -y -ss IN -to OUT -i clip.mp4 \
+  -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30" \
+  -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p \
+  -c:a aac -b:a 160k -ar 48000 -ac 2 seg01.mp4
+```
+
+**橫式影片**（不想裁掉兩邊時，用同一段畫面的模糊版當背景）：
+
+```bash
+ffmpeg -y -ss IN -to OUT -i wide.mp4 -filter_complex \
+  "[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=20:2[bg];[b]scale=1080:-2[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,setsar=1,fps=30[v]" \
+  -map "[v]" -map 0:a -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p \
+  -c:a aac -b:a 160k -ar 48000 -ac 2 seg02.mp4
+```
+
+**沒有聲音的影片**：補一條靜音軌，否則串接會失敗。
+
+```bash
+ffmpeg -y -ss IN -to OUT -i silent.mp4 -f lavfi -i anullsrc=r=48000:cl=stereo \
+  -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30" \
+  -map 0:v -map 1:a -shortest -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p \
+  -c:a aac -b:a 160k -ar 48000 -ac 2 seg03.mp4
+```
+
+**照片**（每張 2–3 秒，加一點慢速推近）：
+
+```bash
+ffmpeg -y -loop 1 -t 3 -i photo.jpg -f lavfi -i anullsrc=r=48000:cl=stereo \
+  -vf "scale=1188:2112:force_original_aspect_ratio=increase,crop=1188:2112,zoompan=z='min(zoom+0.0008,1.08)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=90:s=1080x1920:fps=30,setsar=1" \
+  -map 0:v -map 1:a -t 3 -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p \
+  -c:a aac -b:a 160k -ar 48000 -ac 2 seg04.mp4
+```
+
+## 5. 串接
+
+```bash
+for f in seg*.mp4; do echo "file '$f'"; done > list.txt
+ffmpeg -y -f concat -safe 0 -i list.txt -c copy joined.mp4
+```
+
+## 6. 繁中字幕與開頭字卡
+
+- 一句 8–14 個字，畫面上最多兩行；口白長就拆成多句，不要縮小字體硬塞。
+- 字幕放中下方，避開最底部約兩成（平台的說明文字和按鈕）和右側按鈕區。
+- 開頭字卡（鉤子）放上方三分之一，0–2.5 秒出現，字數 10 個以內。
+- 不用 emoji 當字幕裝飾，不在每個字加特效。
+
+用下面的 Python 從剪輯表產生 ASS（燒進畫面用）和 SRT（上傳平台用）。`FONT` 填 `fc-list` 看到的字型名稱：
+
+```python
+FONT = "Noto Sans CJK TC"
+hook = (0.0, 2.5, "避震器軟硬怎麼調")          # 開頭字卡，沒有就設成 None
+lines = [                                       # (開始秒, 結束秒, 字幕)
+    (0.0, 2.5, "很多人一裝完就不再調"),
+    (2.5, 6.0, "其實阻尼只要轉三格"),
+]
+
+def ts_ass(t):
+    h, rem = divmod(t, 3600); m, s = divmod(rem, 60)
+    return f"{int(h)}:{int(m):02d}:{s:05.2f}"
+
+def ts_srt(t):
+    ms = round(t * 1000); h, ms = divmod(ms, 3600000); m, ms = divmod(ms, 60000); s, ms = divmod(ms, 1000)
+    return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
+
+ass = f"""[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Caption,{FONT},66,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,5,0,2,90,150,420,1
+Style: Hook,{FONT},92,&H0000E1FF,&H0000E1FF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,7,0,8,80,80,300,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+"""
+if hook:
+    ass += f"Dialogue: 1,{ts_ass(hook[0])},{ts_ass(hook[1])},Hook,,0,0,0,,{{\\fad(120,120)}}{hook[2]}\n"
+for a, b, text in lines:
+    ass += f"Dialogue: 0,{ts_ass(a)},{ts_ass(b)},Caption,,0,0,0,,{text}\n"
+open("captions.ass", "w", encoding="utf-8").write(ass)
+open("captions.srt", "w", encoding="utf-8").write(
+    "\n".join(f"{i}\n{ts_srt(a)} --> {ts_srt(b)}\n{t}\n" for i, (a, b, t) in enumerate(lines, 1)))
+```
+
+字幕顏色是 ASS 的 `&HAABBGGRR` 格式：上面 Caption 是白字黑框，Hook 是黃字黑框。換品牌色時記得 BGR 順序是反過來的。
+
+## 7. 燒字幕、統一音量、輸出
+
+```bash
+ffmpeg -y -i joined.mp4 \
+  -vf "ass=captions.ass:fontsdir=/usr/share/fonts" \
+  -af "loudnorm=I=-14:TP=-1.5:LRA=11" \
+  -c:v libx264 -preset medium -crf 21 -maxrate 6M -bufsize 12M -profile:v high -pix_fmt yuv420p \
+  -c:a aac -b:a 160k -ar 48000 -movflags +faststart reel.mp4
+```
+
+- 使用者自己上傳的字型放在別的資料夾時，把 `fontsdir=` 改成那個路徑。
+- 成品要小於 30MB（claude.ai 單檔上傳、下載的上限）。超過就把 `-crf` 加 2、或把 `-maxrate` 調低後重出。60 秒以內通常在 15–25MB。
+
+## 8. 封面
+
+開頭字卡那一格通常就是好封面：
+
+```bash
+ffmpeg -y -ss 1.2 -i reel.mp4 -frames:v 1 -q:v 2 cover.jpg
+```
+
+## 9. 交付前一定要檢查
+
+1. `ffprobe reel.mp4` 確認 1080×1920、30fps、H.264、AAC、長度正確，`ls -lh` 確認小於 30MB。
+2. 抽開頭、中間、結尾三張畫面存成 PNG，實際看過：字有沒有變方塊、有沒有被裁到、有沒有壓到人臉或產品重點、字幕和畫面時間對不對。
+
+   ```bash
+   for t in 1 DUR_HALF DUR_END; do ffmpeg -y -ss $t -i reel.mp4 -frames:v 1 check_$t.png; done
+   ```
+
+3. 有問題修一次再交，不要把沒看過的成品交出去。
+
+## 10. 交付
+
+- 傳出 `reel.mp4`、`cover.jpg`、`captions.srt`。
+- 附一段貼文說明：第一句是第二個鉤子（不要只是摘要），內文一兩句重點，3–5 個相關 hashtag。有 socialpost 或 humanizer-zh-tw 時，用它們潤稿。
+- 提醒使用者：音樂在平台上傳時從平台音樂庫加；發布前看一次手機預覽，確認字幕沒有被平台介面擋住。
+</script>
+<script>
+const SRC = { gh: "GitHub", self: "本站自製", mp: "Plugin：Skills For Real Engineers", sp: "Plugin：Superpowers", ff: "Plugin：ffmpeg-llm", builtin: "Claude 內建", sys: "Claude 內建" };
+const SRC_GROUP = { gh: "gh", self: "self", mp: "plugin", sp: "plugin", ff: "plugin", builtin: "builtin", sys: "builtin" };
+const BADGE = { gh: "獨立 skill", self: "獨立 skill（自製）", mp: "Matt Pocock plugin", sp: "Superpowers plugin", ff: "ffmpeg-llm plugin" };
+const CATS = [
+  ["office", "文件與辦公"], ["social", "社群行銷"], ["slides", "簡報"], ["write", "寫作與研究"], ["think", "思考與企劃"],
+  ["design", "設計與網頁"], ["media", "影音"], ["browser", "瀏覽器與電腦操作"],
+  ["dev", "程式開發"], ["meta", "Claude 使用與管理"]
+];
+const CAT_DESC = {
+  social: "社群貼文、說明文字、輪播、Reels 腳本與成片", slides: "學術簡報與 AI 生圖簡報", write: "查資料、寫文章、潤稿",
+  think: "逼問想法、做問卷、腦力激盪", design: "網頁設計、介面檢查、React 效能", media: "用白話剪輯影片",
+  dev: "規格、測試、除錯、審查、Git", meta: "Claude 使用技巧、交接、自己做 skill", office: "文件與辦公", browser: "瀏覽器與電腦操作"
+};
+const RUBRIC = [
+  [5, "直接推薦", "高頻、低門檻、成果明確。"],
+  [4, "值得安裝", "實用，但比較專門或要一點設定。"],
+  [3, "看情境", "特定工作很好用，學習成本中等。"],
+  [2, "先別急", "跟其他 skill 重疊，或主要給寫程式的人。"],
+  [1, "目前不建議", "寫程式專用，或在 claude.ai 上跑不起來。"]
+];
+const PACKS = [
+  { id: "web", name: "系統網頁包", featured: true, badge: "最重要", route: ["做系統或網站", "設計、實作、安全、測試一次補齊"],
+    desc: "從介面決策、設計品質和寫程式守則，到資安檢查、瀏覽器自動測試與完成前驗收。",
+    flow: "設計 → 品質 → 實作 → 安全 → 測試 → 驗收",
+    skills: ["ui-ux-pro-max", "impeccable-lite", "web-design-guidelines", "karpathy-guidelines", "security-review", "webapp-testing", "verification-before-completion"] },
+  { id: "social", name: "社群經營包", badge: "行銷人必備", route: ["社群發文與 Reels", "寫貼文、做 Reels、去 AI 味"],
+    desc: "從校準你的口氣開始：寫 FB、IG、Threads 貼文，把文章改成社群版，寫開頭鉤子和說明文字，再做 Reels 腳本和成片，最後去 AI 味。",
+    flow: "語氣 → 貼文 → 鉤子 → 腳本 → 成片 → 潤稿",
+    skills: ["socialpost", "lets-social", "hook-writer-sms", "caption-writer-sms", "viral-reel-generator", "reels-maker", "humanizer-zh-tw"] },
+  { id: "coding", name: "寫程式核心包", badge: "穩定開發流程", route: ["寫程式與除錯", "從規格一路做到審查"],
+    desc: "從想清楚、寫規格、拆工作，到測試驅動實作、除錯與程式碼審查。",
+    flow: "釐清 → 規格 → 拆工 → 實作 → 除錯 → 審查",
+    skills: ["grill-me", "to-spec", "to-tickets", "tdd", "diagnosing-bugs", "code-review"] },
+  { id: "research", name: "研究寫作包", badge: "報告與文章", route: ["研究與寫作", "找資料、整理、成文、潤稿"],
+    desc: "找可信資料、整理素材、排出文章節奏，最後把繁中改得自然。",
+    flow: "研究 → 素材 → 成文 → 潤稿",
+    skills: ["research", "content-research-writer", "writing-beats", "humanizer-zh-tw"] },
+  { id: "plan", name: "簡報企劃包", badge: "提案與口試", route: ["簡報與企劃", "逼問想法、做問卷、排簡報"],
+    desc: "先把想法逼問清楚、整理成問卷，再做成每頁標題就是結論的學術簡報，或整頁圖片式的視覺簡報。",
+    flow: "構思 → 逼問 → 問卷 → 簡報",
+    skills: ["brainstorming", "grill-me", "to-questionnaire", "academic-pptx", "codex-ppt"] },
+  { id: "video", name: "影片製作包", badge: "剪輯與輸出", route: ["製作影片", "腳本、成片、細修、字幕"],
+    desc: "先寫逐秒腳本，再把素材剪成直式成片、燒繁中字幕，細部用白話指令修改，字幕最後去 AI 味。",
+    flow: "腳本 → 成片 → 細修 → 字幕",
+    skills: ["viral-reel-generator", "reels-maker", "ffmpeg-command", "humanizer-zh-tw"] }
+];
+const MP = "https://github.com/mattpocock/skills";
+const SP = "https://github.com/obra/superpowers";
+const AS = "https://github.com/anthropics/skills";
+const GH_PATH = {
+  "academic-pptx": "https://github.com/Gabberflast/academic-pptx-skill",
+  "ppt-generation": "https://github.com/bytedance/deer-flow/tree/main/skills/public/ppt-generation",
+  "humanizer-zh-tw": "https://github.com/kevintsai1202/humanizer-zh-tw",
+  "content-research-writer": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/content-research-writer",
+  "ui-ux-pro-max": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/.claude/skills/ui-ux-pro-max",
+  "web-design-guidelines": "https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines",
+  "vercel-react-best-practices": "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices",
+  "impeccable-lite": "https://github.com/pbakaus/impeccable",
+  "react-performance-optimization": "https://github.com/NickCrew/claude-ctx-plugin/tree/main/skills/react-performance-optimization",
+  "karpathy-guidelines": "https://github.com/multica-ai/andrej-karpathy-skills/tree/main/skills/karpathy-guidelines",
+  "security-review": "https://github.com/WorldFlowAI/everything-claude-code/tree/main/skills/security-review",
+  "i-have-adhd": "https://github.com/ayghri/i-have-adhd/tree/main/skills/i-have-adhd",
+  "webapp-testing": AS + "/tree/main/skills/webapp-testing",
+  "academy-guide": AS + "/tree/main/skills/academy-guide"
+};
+const PLUGIN_PATHS = {"mp":{"wait-what":"skills/productivity/wait-what","to-questionnaire":"skills/productivity/to-questionnaire","grill-me":"skills/productivity/grill-me","writing-for-agents":"skills/productivity/writing-for-agents","grilling":"skills/productivity/grilling","handoff":"skills/productivity/handoff","teach":"skills/productivity/teach","migrate-to-shoehorn":"skills/misc/migrate-to-shoehorn","scaffold-exercises":"skills/misc/scaffold-exercises","git-guardrails-claude-code":"skills/misc/git-guardrails-claude-code","setup-pre-commit":"skills/misc/setup-pre-commit","loop-me":"skills/in-progress/loop-me","writing-fragments":"skills/in-progress/writing-fragments","setup-ts-deep-modules":"skills/in-progress/setup-ts-deep-modules","claude-handoff":"skills/in-progress/claude-handoff","writing-shape":"skills/in-progress/writing-shape","chief-of-staff":"skills/in-progress/chief-of-staff","writing-beats":"skills/in-progress/writing-beats","software-factory":"skills/in-progress/software-factory","implement-spec":"skills/engineering/implement-spec","wizard":"skills/engineering/wizard","ask-matt":"skills/engineering/ask-matt","retro":"skills/engineering/retro","research":"skills/engineering/research","improve-codebase-architecture":"skills/engineering/improve-codebase-architecture","wayfinder":"skills/engineering/wayfinder","prototype":"skills/engineering/prototype","pr":"skills/engineering/pr","grill-with-docs":"skills/engineering/grill-with-docs","domain-modeling":"skills/engineering/domain-modeling","diagnosing-bugs":"skills/engineering/diagnosing-bugs","setup-matt-pocock-skills":"skills/engineering/setup-matt-pocock-skills","codebase-design":"skills/engineering/codebase-design","to-tickets":"skills/engineering/to-tickets","tdd":"skills/engineering/tdd","code-review":"skills/engineering/code-review","implement":"skills/engineering/implement","to-spec":"skills/engineering/to-spec","triage":"skills/engineering/triage"},"sp":{"using-superpowers":"skills/using-superpowers","subagent-driven-development":"skills/subagent-driven-development","brainstorming":"skills/brainstorming","diagnosing-superpowers":"skills/diagnosing-superpowers","writing-plans":"skills/writing-plans","executing-plans":"skills/executing-plans","receiving-code-review":"skills/receiving-code-review","requesting-code-review":"skills/requesting-code-review","writing-skills":"skills/writing-skills","dispatching-parallel-agents":"skills/dispatching-parallel-agents","verification-before-completion":"skills/verification-before-completion","using-git-worktrees":"skills/using-git-worktrees","finishing-a-development-branch":"skills/finishing-a-development-branch","test-driven-development":"skills/test-driven-development","systematic-debugging":"skills/systematic-debugging"}};
+const PLUGIN_NAME = { mp: "Skills For Real Engineers（Matt Pocock）", sp: "Superpowers", ff: "ffmpeg-llm" };
+const PAGE = 12;
+
+const SKILLS = [
+  // 文件與辦公
+  { n: "docx", t: "Word 文件", c: "office", s: "builtin", st: 5, d: "產生或修改 .docx。報告、企劃書、表單都能直接輸出成 Word，也能幫你改現有檔案、保留修訂紀錄。" },
+  { n: "xlsx", t: "Excel 試算表", c: "office", s: "builtin", st: 5, d: "建立或整理 Excel：加公式、清理亂掉的資料、做統計和圖表，期末報告的數據整理很好用。" },
+  { n: "pptx", t: "PowerPoint 簡報", c: "office", s: "builtin", st: 5, d: "直接產出可以再編輯的 .pptx，也能讀取別人的簡報、抽出文字或改版面。" },
+  { n: "pdf", t: "PDF 處理", c: "office", s: "builtin", st: 5, d: "合併、拆分、旋轉、加浮水印、填表單，掃描檔也能 OCR 成可以搜尋的文字。" },
+  { n: "docs", t: "線上協作文件", c: "office", s: "builtin", st: 4, d: "在 Claude 裡做一份可以分享、可以留言的線上文件，之後能匯出成 Word 或 PDF。" },
+  { n: "google-workspace", t: "Google 文件／試算表／簡報", c: "office", s: "builtin", st: 4, d: "直接建立或修改你 Google Drive 裡的文件、試算表和簡報。", w: "要先在 Claude 連上 Google Drive。" },
+  { n: "file-reading", t: "讀取上傳檔案", c: "office", s: "sys", st: 4, d: "你丟檔案進對話時，Claude 靠它判斷怎麼讀最好，PDF、Excel、壓縮檔、電子書都能處理。", w: "自動運作，不用特別叫它。" },
+  { n: "pdf-reading", t: "精讀 PDF", c: "office", s: "sys", st: 4, d: "讀長篇或掃描版 PDF 時，會逐頁看圖表和表格，讀論文和年報特別有感。", w: "自動運作，不用特別叫它。" },
+
+  // 簡報
+  { n: "academic-pptx", t: "學術簡報", c: "slides", s: "gh", st: 5, by: "Gabberflast/academic-pptx-skill", u: "https://github.com/Gabberflast/academic-pptx-skill", d: "口試、課堂報告、研討會用。每頁標題直接寫結論、一頁一個重點、圖表附出處，最後一頁放結論而不是「謝謝聆聽」。會跟內建的 pptx 一起運作。" },
+  { n: "codex-ppt", t: "圖片式簡報（Codex PPT）", c: "slides", s: "gh", st: 5, by: "ningzimu/codex-ppt-skill", u: "https://github.com/ningzimu/codex-ppt-skill/tree/main/skills/codex-ppt", d: "把文章、報告、論文或課堂筆記做成整頁圖片式的 16:9 簡報：先確認大綱，從 12 種內建風格挑一種（麥肯錫、科研答辯、手繪技術解釋等），出一張樣張給你看，滿意再整套生成，最後附講稿組成 PPTX。", w: "Claude 本身不會生圖，要接 OpenAI 相容的生圖 API（用你自己的 API key，按張計費），還要在設定裡允許程式連外網；它預設用子 agent 平行出圖，claude.ai 沒有子 agent，要跟它說「一頁一頁生成就好」。每頁是一整張圖，字不能直接改。" },
+  { n: "ppt-generation", t: "AI 生圖簡報", c: "slides", s: "gh", st: 1, by: "bytedance/deer-flow", u: "https://github.com/bytedance/deer-flow", d: "設計成每一頁先用 AI 生成整張圖片，再組成 PPT。", w: "它依賴 DeerFlow 平台自己的生圖工具，在 claude.ai 上跑不起來。做簡報請改用 pptx 或 academic-pptx。" },
+
+  // 寫作與研究
+  { n: "humanizer-zh-tw", t: "繁中去 AI 味", c: "write", s: "gh", st: 5, by: "kevintsai1202/humanizer-zh-tw", u: "https://github.com/kevintsai1202/humanizer-zh-tw", d: "刪掉空話、套話和公式化句型，讓文章讀起來像人寫的，同時保留原本的事實和語氣。FB 貼文、心得、報告潤稿都適用。" },
+  { n: "deep-research", t: "深度研究報告", c: "write", s: "builtin", st: 5, d: "同時查很多來源、比較整理，最後寫成附引用的完整報告。市場調查、文獻回顧、產業分析都適合。" },
+  { n: "content-research-writer", t: "研究型寫作夥伴", c: "write", s: "gh", st: 4, by: "ComposioHQ/awesome-claude-skills", u: "https://github.com/ComposioHQ/awesome-claude-skills", d: "陪你一段一段寫文章：幫忙找資料、加引用、改開頭、調大綱，適合部落格和專欄。" },
+  { n: "teach", t: "教學模式", c: "write", s: "mp", st: 4, u: MP, d: "請它教你一個新觀念或新工具，會依你的程度一步步講解，還會出小練習。" },
+  { n: "research", t: "查一手資料", c: "write", s: "mp", st: 3, u: MP, d: "針對一個問題去讀官方文件和原始資料，把結論整理成一份筆記檔。" },
+  { n: "writing-fragments", t: "寫作 1：收集素材", c: "write", s: "mp", st: 3, u: MP, d: "先把零散的想法和片段倒出來，不急著排結構。", w: "作者標示為開發中。" },
+  { n: "writing-beats", t: "寫作 2：排出段落", c: "write", s: "mp", st: 3, u: MP, d: "把素材排成一段一段往前推進的骨架，名詞在用到之前都先交代清楚。", w: "作者標示為開發中。" },
+  { n: "writing-shape", t: "寫作 3：寫成文章", c: "write", s: "mp", st: 3, u: MP, d: "照骨架一段一段寫成完整文章。三個寫作 skill 依序用效果最好。", w: "作者標示為開發中。" },
+
+  // 思考與企劃
+  { n: "grill-me", t: "逼問到想清楚", c: "think", s: "mp", st: 4, u: MP, d: "針對你的計畫或想法連續追問，直到盲點都被挖出來。寫企劃、定論文題目、評估創業點子之前很有用。" },
+  { n: "to-questionnaire", t: "把問題變問卷", c: "think", s: "mp", st: 4, u: MP, d: "遇到自己答不出來、需要問別人的決定，幫你整理成一份問卷，拿去給主管、客戶或受訪者填。" },
+  { n: "grilling", t: "壓力測試想法", c: "think", s: "mp", st: 3, u: MP, d: "跟 grill-me 類似，你說「幫我挑毛病」「grill 一下」時會啟動。" },
+  { n: "wait-what", t: "聽不懂，重講", c: "think", s: "mp", st: 3, u: MP, d: "Claude 的回答太難懂時叫它，它會換個方式重新說明。" },
+  { n: "brainstorming", t: "動手前先釐清", c: "think", s: "sp", st: 3, u: SP, d: "做任何新東西之前，先問清楚目的、需求和限制，再一起想方案。", w: "觸發得很積極，有時你只想要快速答案，也會被拉去討論。" },
+  { n: "grill-with-docs", t: "邊逼問邊寫文件", c: "think", s: "mp", st: 2, u: MP, d: "追問的同時把決定記錄成文件和名詞表，偏向軟體專案使用。" },
+  { n: "loop-me", t: "自動化流程規格", c: "think", s: "mp", st: 2, u: MP, d: "追問你想自動化的工作流程細節，整理成規格。", w: "作者標示為開發中。" },
+
+  // 設計與網頁
+  { n: "dataviz", t: "圖表設計", c: "design", s: "sys", st: 4, d: "Claude 畫圖表時遵循的配色和排版規則，讓圖表清楚好讀，深色淺色都好看。", w: "自動運作，不用特別叫它。" },
+  { n: "ui-ux-pro-max", t: "UI/UX 設計資料庫", c: "design", s: "gh", st: 5, by: "nextlevelbuilder/ui-ux-pro-max-skill", u: "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill", d: "內含 80 種介面風格、192 組產業配色、74 組字體搭配和 119 條 UX 規則。做網站、後台、App 前先幫你定好設計方向，做完再用檢查清單驗收。搜尋程式只用 Python 內建功能，不連網。", w: "要裝整個資料夾（含 data 和 scripts），只裝 SKILL.md 的話資料庫用不了，只剩檢查清單。" },
+  { n: "web-design-guidelines", t: "網頁介面檢查", c: "design", s: "gh", st: 3, by: "vercel-labs/agent-skills", u: "https://github.com/vercel-labs/agent-skills", d: "依 Vercel 整理的介面規範檢查你的網頁，包括無障礙、互動和版面細節。", w: "每次會從 GitHub 抓最新規則，需要開網路存取。" },
+  { n: "impeccable-lite", t: "設計品質底線", c: "design", s: "gh", st: 3, by: "pbakaus/impeccable（精簡版）", u: "https://github.com/pbakaus/impeccable", d: "列出好網頁一定要過的檢查（對比、間距、各種狀態）和 AI 常見的俗套設計，並附技術評分與出貨前打磨流程。", w: "這是我改的精簡文字版。原版 impeccable 功能更多，但要執行它自帶的程式，在 claude.ai 上不一定能用。" },
+  { n: "frontend-design", t: "前端設計方向", c: "design", s: "sys", st: 4, d: "做網頁或介面時，引導 Claude 做出有個性、不像套版的設計。", w: "自動運作，不用特別叫它。" },
+  { n: "vercel-react-best-practices", t: "React 效能守則", c: "design", s: "gh", st: 2, by: "vercel-labs/agent-skills", u: "https://github.com/vercel-labs/agent-skills", d: "Vercel 工程團隊整理的 React／Next.js 效能寫法，寫前端程式的同學才用得到。" },
+  { n: "react-performance-optimization", t: "React 效能優化", c: "design", s: "gh", st: 1, by: "NickCrew/claude-ctx-plugin", u: "https://github.com/NickCrew/claude-ctx-plugin", d: "memo、程式碼分割等 React 優化技巧。", w: "跟 vercel-react-best-practices 重疊，二選一即可。" },
+
+  // 影音
+  { n: "video-making", t: "製作影片", c: "media", s: "builtin", st: 3, d: "用程式產生短影片或動畫，例如產品介紹、數據動態圖。它不是用來剪你自己拍的影片。" },
+  { n: "ffmpeg-command", t: "用白話剪影片", c: "media", s: "ff", st: 3, d: "說出想怎麼處理影片，例如裁切、轉檔、抽音訊、做 GIF、壓字幕，它會寫出 ffmpeg 指令；上傳影片後可以直接幫你處理。" },
+  { n: "ffmpeg", t: "ffmpeg 快捷指令", c: "media", s: "ff", st: 2, d: "跟 ffmpeg-command 是同一套，用 /ffmpeg 直接叫出來。" },
+
+  // 瀏覽器與電腦操作
+  { n: "chrome-browser", t: "操作你的 Chrome", c: "browser", s: "builtin", st: 3, d: "讓 Claude 在你自己的 Chrome 裡點網頁、填表單、抓資料，會用到你已經登入的帳號。", w: "要先安裝 Claude in Chrome 擴充功能。" },
+  { n: "built-in-browser", t: "App 內建瀏覽器", c: "browser", s: "builtin", st: 3, d: "Claude 桌面版裡的瀏覽器分頁，Claude 可以在裡面開網站、操作頁面，跟你自己的 Chrome 分開。", w: "需要 Claude 桌面版。" },
+  { n: "computer-use", t: "操作電腦上的 App", c: "browser", s: "builtin", st: 3, d: "讓 Claude 看你的螢幕、操作桌面程式，例如 Excel 視窗或系統設定。", w: "需要 Claude 桌面版，每個 App 都要你先同意。" },
+
+  // 程式開發
+  { n: "karpathy-guidelines", t: "寫程式四守則", c: "dev", s: "gh", st: 4, by: "multica-ai/andrej-karpathy-skills", u: "https://github.com/multica-ai/andrej-karpathy-skills", d: "先講清楚假設、能簡單就簡單、只改需要改的、先定義怎樣算完成。請 Claude 寫程式時能少很多返工。" },
+  { n: "security-review", t: "資安檢查清單", c: "dev", s: "gh", st: 5, by: "WorldFlowAI/everything-claude-code", u: "https://github.com/WorldFlowAI/everything-claude-code", d: "做登入、上傳檔案、API、金流時的資安檢查清單，也涵蓋 Supabase 的資料權限設定。系統只要有帳號或資料庫就該用。" },
+  { n: "webapp-testing", t: "自動測試網站", c: "dev", s: "gh", st: 4, by: "anthropics/skills（Anthropic 官方範例）", u: AS, d: "用 Playwright 自動開網頁、點按鈕、截圖、看錯誤訊息，做完系統先讓它跑一輪，確認每個功能真的能用。" },
+  { n: "prototype", t: "快速原型", c: "dev", s: "mp", st: 2, u: MP, d: "做一個用完即丟的小原型，先驗證流程或畫面對不對。" },
+  { n: "to-spec", t: "整理成規格書", c: "dev", s: "mp", st: 2, u: MP, d: "把對話裡討論過的內容整理成一份規格，發到專案的 issue。" },
+  { n: "to-tickets", t: "拆成工作單", c: "dev", s: "mp", st: 2, u: MP, d: "把計畫拆成一張張可以執行的工作項目，並標出先後順序。" },
+  { n: "tdd", t: "先寫測試再寫程式", c: "dev", s: "mp", st: 2, u: MP, d: "測試驅動開發：先寫一個會失敗的測試，再寫程式讓它通過。" },
+  { n: "diagnosing-bugs", t: "除錯診斷", c: "dev", s: "mp", st: 2, u: MP, d: "遇到難搞的 bug 或效能變慢時，用固定流程找出真正原因。" },
+  { n: "code-review", t: "程式碼審查", c: "dev", s: "mp", st: 2, u: MP, d: "從「有沒有照規範」和「有沒有照需求」兩個角度審查一段改動。" },
+  { n: "retro", t: "開發回顧", c: "dev", s: "mp", st: 2, u: MP, d: "一段開發工作結束後做回顧：哪裡順、哪裡卡、下次怎麼改。" },
+  { n: "writing-plans", t: "寫實作計畫", c: "dev", s: "sp", st: 2, u: SP, d: "需求確定後，先寫出逐步的實作計畫再動手。" },
+  { n: "executing-plans", t: "照計畫執行", c: "dev", s: "sp", st: 2, u: SP, d: "照寫好的計畫一步一步做，每一步都檢查。" },
+  { n: "test-driven-development", t: "測試驅動開發", c: "dev", s: "sp", st: 2, u: SP, d: "先寫測試再寫程式。", w: "跟 Matt Pocock 的 tdd 重疊，留一個就好。" },
+  { n: "systematic-debugging", t: "系統化除錯", c: "dev", s: "sp", st: 2, u: SP, d: "遇到錯誤先找根本原因再修，避免亂試。", w: "跟 diagnosing-bugs 重疊。" },
+  { n: "verification-before-completion", t: "說完成前先驗證", c: "dev", s: "sp", st: 2, u: SP, d: "要宣稱「做好了」之前，一定先實際跑過、看到結果。" },
+  { n: "wayfinder", t: "大型工作地圖", c: "dev", s: "mp", st: 1, u: MP, d: "把一次對話做不完的大工程，拆成一張決策清單逐一處理。" },
+  { n: "triage", t: "議題分類", c: "dev", s: "mp", st: 1, u: MP, d: "整理 GitHub 的 issue 和外部 PR：分類、驗證，寫成可以直接交辦的說明。" },
+  { n: "implement", t: "照工作單實作", c: "dev", s: "mp", st: 1, u: MP, d: "依規格或工作單把功能寫出來。" },
+  { n: "implement-spec", t: "照規格實作", c: "dev", s: "mp", st: 1, u: MP, d: "專門接 to-spec 和 to-tickets 的產出，把規格寫成程式。" },
+  { n: "pr", t: "寫 PR 說明", c: "dev", s: "mp", st: 1, u: MP, d: "幫你寫 GitHub Pull Request 的說明內容。" },
+  { n: "resolving-merge-conflicts", t: "解 Git 合併衝突", c: "dev", s: "mp", st: 1, u: MP, d: "處理進行中的 merge 或 rebase 衝突。" },
+  { n: "codebase-design", t: "模組設計", c: "dev", s: "mp", st: 1, u: MP, d: "設計模組介面、找出可以簡化的地方，讓程式更好測、更好讀。" },
+  { n: "improve-codebase-architecture", t: "架構改善報告", c: "dev", s: "mp", st: 1, u: MP, d: "掃描整個程式庫，產出一份視覺化的改善建議報告。" },
+  { n: "domain-modeling", t: "領域模型", c: "dev", s: "mp", st: 1, u: MP, d: "整理專案用語、名詞表和架構決策紀錄（ADR）。" },
+  { n: "setup-matt-pocock-skills", t: "開發套件初始化", c: "dev", s: "mp", st: 1, u: MP, d: "第一次用這套開發 skill 之前，先設定 issue 追蹤方式和文件位置。" },
+  { n: "setup-pre-commit", t: "提交前自動檢查", c: "dev", s: "mp", st: 1, u: MP, d: "幫專案裝好 Husky，在 commit 前自動排版、做型別檢查、跑測試。" },
+  { n: "setup-ts-deep-modules", t: "TypeScript 模組邊界", c: "dev", s: "mp", st: 1, u: MP, d: "用 dependency-cruiser 限制模組之間可以怎麼互相引用。" },
+  { n: "git-guardrails-claude-code", t: "Git 防呆", c: "dev", s: "mp", st: 1, u: MP, d: "在 Claude Code 擋下 push、reset --hard 這類危險的 Git 指令。" },
+  { n: "migrate-to-shoehorn", t: "測試寫法轉換", c: "dev", s: "mp", st: 1, u: MP, d: "把測試裡的 as 型別斷言改成 shoehorn 的寫法。" },
+  { n: "scaffold-exercises", t: "程式練習題架構", c: "dev", s: "mp", st: 1, u: MP, d: "建立程式課的練習題資料夾結構，比較適合老師或助教。" },
+  { n: "wizard", t: "步驟引導腳本", c: "dev", s: "mp", st: 1, u: MP, d: "產生一個互動式腳本，帶人一步步完成只能手動做的設定，例如申請帳號、設定金鑰。" },
+  { n: "subagent-driven-development", t: "分派子代理開發", c: "dev", s: "sp", st: 1, u: SP, d: "把計畫中互相獨立的任務交給多個子代理分頭完成。" },
+  { n: "dispatching-parallel-agents", t: "平行處理任務", c: "dev", s: "sp", st: 1, u: SP, d: "兩件以上互不相干的工作同時進行。" },
+  { n: "requesting-code-review", t: "送出審查", c: "dev", s: "sp", st: 1, u: SP, d: "功能完成後主動送審查，對照需求確認。" },
+  { n: "receiving-code-review", t: "回應審查意見", c: "dev", s: "sp", st: 1, u: SP, d: "收到審查意見時先驗證對不對，不照單全收。" },
+  { n: "using-git-worktrees", t: "Git 工作樹", c: "dev", s: "sp", st: 1, u: SP, d: "開一個隔離的工作空間來做新功能。" },
+  { n: "finishing-a-development-branch", t: "收尾分支", c: "dev", s: "sp", st: 1, u: SP, d: "功能做完、測試通過後，決定怎麼合併回主線。" },
+
+  // Claude 使用與管理
+  { n: "skill-creator", t: "自己做 skill", c: "meta", s: "builtin", st: 4, d: "把你常做的流程（例如固定格式的週報）做成 skill，之後一句話就能套用；也能測試、改良現有的 skill。" },
+  { n: "academy-guide", t: "官方課程推薦", c: "meta", s: "gh", st: 3, by: "anthropics/skills（Anthropic 官方範例）", u: AS, d: "你問「Claude 這個功能怎麼用」時，會在回答最後附上 Claude Academy 對應的課程或教學。" },
+  { n: "i-have-adhd", t: "精簡行動模式", c: "meta", s: "gh", st: 3, by: "ayghri/i-have-adhd", u: "https://github.com/ayghri/i-have-adhd", d: "回答第一行就是下一步、步驟編號、不岔題、時間估計具體。想要回答短又能馬上照做時很好用。", w: "輸入 /i-have-adhd 開啟，說 stop adhd mode 關閉。" },
+  { n: "setup-claude", t: "新手設定導覽", c: "meta", s: "sys", st: 3, d: "依你的職務推薦 plugin、試用 skill、連接常用工具，剛開始用 Claude 的同學可以從這裡開始。" },
+  { n: "handoff", t: "交接文件", c: "meta", s: "mp", st: 3, u: MP, d: "對話太長、要換新對話時，把目前進度整理成交接文件，貼到新對話就能接著做。" },
+  { n: "claude-handoff", t: "交給背景代理", c: "meta", s: "mp", st: 2, u: MP, d: "把目前的工作直接交給一個新的背景代理接手。", w: "作者標示為開發中。" },
+  { n: "import-memory", t: "匯入其他 AI 的記憶", c: "meta", s: "builtin", st: 2, d: "把 ChatGPT 等其他 AI 匯出的記憶內容匯入 Claude，通常只用一次。" },
+  { n: "morning", t: "每日晨報", c: "meta", s: "builtin", st: 2, d: "把今天的行程和待辦整理成一頁，也可以設定成平日自動產生。" },
+  { n: "explain-usage", t: "用量說明", c: "meta", s: "sys", st: 2, d: "用一張圖說明這次對話的 token 都花在哪裡。" },
+  { n: "product-self-knowledge", t: "Claude 產品知識", c: "meta", s: "sys", st: 2, d: "回答 Claude 方案、功能、API 相關問題時，先查官方資料再回答。", w: "自動運作，不用特別叫它。" },
+  { n: "writing-skills", t: "寫 skill（Superpowers 版）", c: "meta", s: "sp", st: 2, u: SP, d: "建立和測試 skill 的另一套方法。", w: "跟 skill-creator 重疊。" },
+  { n: "writing-for-agents", t: "寫給 AI 看的文件", c: "meta", s: "mp", st: 2, u: MP, d: "寫 skill、CLAUDE.md 這類給 AI 讀的說明文件時用。" },
+  { n: "ask-matt", t: "該用哪個 skill", c: "meta", s: "mp", st: 2, u: MP, d: "告訴它你的情況，它會推薦 Matt Pocock 這套裡適合的 skill 或流程。" },
+  { n: "using-superpowers", t: "Superpowers 總開關", c: "meta", s: "sp", st: 1, u: SP, d: "讓 Claude 每次回答前先檢查有沒有該用的 skill，是這套 plugin 的運作核心，不用自己叫它。" },
+  { n: "diagnosing-superpowers", t: "Superpowers 問題診斷", c: "meta", s: "sp", st: 1, u: SP, d: "Superpowers 表現怪怪的時候，用來分析原因或整理問題回報。" },
+  { n: "cowork-plugin", t: "製作 plugin", c: "meta", s: "sys", st: 1, d: "從零做一個 plugin，或幫公司客製已經安裝的 plugin。" },
+  { n: "plugin-authoring", t: "改造 Claude 介面", c: "meta", s: "sys", st: 1, d: "做 Claude 介面上的小外掛，例如側邊面板、狀態列、快捷指令。" },
+
+  // 社群行銷
+  { n: "socialpost", t: "社群貼文寫手（繁中）", c: "social", s: "gh", st: 5, by: "Hao0321/claude-skill-social-post", u: "https://github.com/Hao0321/claude-skill-social-post/tree/main/chatgpt-socialpost", d: "台灣作者寫的繁中發文規則，FB、IG、Threads、YouTube、X 都能寫。先拿你的真實貼文校準口氣，一篇只講一個重點，不用「今天想分享」這類空話，交稿前逐項核對字數、換行、標點和 CTA。", w: "先貼一兩篇你以前的同類貼文給它，否則只會給「未校準初稿」。" },
+  { n: "lets-social", t: "文章轉社群貼文", c: "social", s: "gh", st: 4, by: "letswritetw/lets-social", u: "https://github.com/letswritetw/lets-social", d: "台灣團隊 Let's Write 做的：把寫好的文章改寫成 IG、FB、Threads、Telegram 貼文，各平台分開寫、不是縮短版，並附 IG 知識圖卡的生圖提示詞。不會加入原文沒有的事實。", w: "要先有寫好的文章或網址；它不發文，也不直接出圖。" },
+  { n: "viral-reel-generator", t: "Reels 腳本", c: "social", s: "gh", st: 4, by: "Beerspitnight/cc-skills", u: "https://github.com/Beerspitnight/cc-skills/tree/main/plugins/viral-reel-generator", d: "寫 Reels、Shorts、TikTok 逐秒腳本：先給兩個開頭鉤子，再寫畫面、口白和字卡，附封面字和貼文第一句。禁用「今天跟大家分享」這類 AI 腔。" },
+  { n: "reels-maker", t: "Reels 成片", c: "social", s: "self", st: 4, d: "把你上傳的影片片段或照片剪成 9:16 直式 Reels：依腳本排段落、橫式素材加模糊背景、燒繁中字幕和開頭字卡、統一音量，輸出 MP4、封面和字幕檔，檔案控制在 30MB 內。", w: "需要 Claude 的程式碼執行；音樂只放你確定能商用的。" },
+  { n: "social-media-context-sms", t: "社群語氣設定", c: "social", s: "gh", st: 4, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/social-media-context-sms", d: "先問你的語氣、受眾、內容支柱和常用平台，整理成一份設定。blacktwist 其他 13 個寫文時都會參考它，建議第一個裝。", w: "claude.ai 不會跨對話保存這份設定；新對話要用時，把設定內容貼給 Claude。" },
+  { n: "post-writer-sms", t: "單篇貼文寫手", c: "social", s: "gh", st: 4, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/post-writer-sms", d: "依平台字數和文化寫單篇貼文，涵蓋 FB、IG、Threads、LinkedIn、X、TikTok、YouTube 社群等平台。", w: "會先找社群語氣設定，沒有的話會請你先跑 social-media-context-sms。" },
+  { n: "caption-writer-sms", t: "圖片影片說明文字", c: "social", s: "gh", st: 4, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/caption-writer-sms", d: "給 IG、FB、TikTok、YouTube 這類以畫面為主的貼文寫說明文字：第一行鉤子、內文節奏、hashtag 放哪裡。" },
+  { n: "hook-writer-sms", t: "開頭鉤子", c: "social", s: "gh", st: 4, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/hook-writer-sms", d: "專寫第一句、影片開頭和縮圖標題，一次給多個版本讓你挑。" },
+  { n: "carousel-writer-sms", t: "輪播圖文案", c: "social", s: "gh", st: 3, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/carousel-writer-sms", d: "寫 IG、FB、LinkedIn 輪播：封面一句話、每頁一個重點、最後一頁 CTA。" },
+  { n: "thread-writer-sms", t: "串文寫手", c: "social", s: "gh", st: 3, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/thread-writer-sms", d: "寫 Threads、X、LinkedIn 的多則串文或系列內容，每則都能單獨看懂。" },
+  { n: "content-repurposer-sms", t: "一稿多用", c: "social", s: "gh", st: 3, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/content-repurposer-sms", d: "把一篇內容改寫成多種格式和平台版本，例如長文拆成串文、輪播和短貼文。" },
+  { n: "content-calendar-sms", t: "內容行事曆", c: "social", s: "gh", st: 3, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/content-calendar-sms", d: "排每週、每月要發什麼、何時發，平衡各類內容的比例。" },
+  { n: "content-strategy-sms", t: "內容策略", c: "social", s: "gh", st: 3, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/content-strategy-sms", d: "規劃主題群、內容支柱和發文比例，決定這個帳號長期要講什麼。" },
+  { n: "platform-strategy-sms", t: "平台經營打法", c: "social", s: "gh", st: 2, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/platform-strategy-sms", d: "LinkedIn、X、Threads、Bluesky 各平台的經營戰術，Threads 以外在台灣比較少用。" },
+  { n: "performance-analyzer-sms", t: "貼文成效分析", c: "social", s: "gh", st: 2, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/performance-analyzer-sms", d: "分析貼文的觸及、互動和轉換表現，找出好壞原因。", w: "要先從平台匯出成效數據給它。" },
+  { n: "content-pattern-analyzer-sms", t: "內容模式分析", c: "social", s: "gh", st: 2, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/content-pattern-analyzer-sms", d: "比較大量貼文，找出哪類主題、格式、開頭比較有效。", w: "要先從平台匯出成效數據給它。" },
+  { n: "audience-growth-tracker-sms", t: "粉絲成長追蹤", c: "social", s: "gh", st: 2, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/audience-growth-tracker-sms", d: "追蹤追蹤數變化，分析是哪些內容帶來新粉絲。", w: "要先從平台匯出成效數據給它。" },
+  { n: "optimization-advisor-sms", t: "經營優化建議", c: "social", s: "gh", st: 2, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/optimization-advisor-sms", d: "根據成效給具體的改善建議，例如該多做什麼、少做什麼。", w: "要先從平台匯出成效數據給它。" }
+];
+
+
+/* Built-in skills are not listed. */
+const LIST = SKILLS.filter((k) => SRC_GROUP[k.s] !== "builtin");
+
+/* ---------- Helpers ---------- */
+const $ = (s) => document.querySelector(s);
+const byName = Object.fromEntries(LIST.map((k) => [k.n, k]));
+const DATA_UPDATED = "2026-11-07";
+PACKS.forEach((p) => {
+  const missing = p.skills.filter((n) => !byName[n]);
+  if (missing.length) {
+    console.warn(`套餐「${p.name}」引用了不存在的 skill，已略過：${missing.join("、")}`);
+    p.skills = p.skills.filter((n) => byName[n]);
+  }
+});
+const catLabel = Object.fromEntries(CATS);
+const catOrder = Object.fromEntries(CATS.map((c, i) => [c[0], i]));
+const ruleOf = Object.fromEntries(RUBRIC.map((r) => [r[0], r]));
+const reduceMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const applied = { q: "", cat: "all", min: 0, src: "all", sort: "rating" };
+const view = { scope: "core", pack: null, shown: PAGE };
+const openCards = new Set();
+
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+function starsEl(n, withScore) {
+  const s = el("span", "stars");
+  s.setAttribute("role", "img");
+  s.setAttribute("aria-label", `實用指數 ${n} 星`);
+  s.append(el("span", "on", "★".repeat(n)));
+  if (n < 5) s.append(el("span", "off", "★".repeat(5 - n)));
+  if (withScore) s.append(el("b", null, `${n} / 5`));
+  return s;
+}
+function sourceOf(k) {
+  if (k.s === "self") return { url: "", label: "本站自製" };
+  if (k.s === "gh") return { url: k.u || GH_PATH[k.n] || AS, label: k.by || "GitHub" };
+  if (k.s === "mp") return { url: PLUGIN_PATHS.mp[k.n] ? `${MP}/tree/main/${PLUGIN_PATHS.mp[k.n]}` : MP, label: "mattpocock/skills" };
+  if (k.s === "sp") return { url: PLUGIN_PATHS.sp[k.n] ? `${SP}/tree/main/${PLUGIN_PATHS.sp[k.n]}` : SP, label: "obra/superpowers" };
+  return { url: "https://claude.com/marketplace", label: "Plugin 市集：ffmpeg-llm" };
+}
+function installPrompt(k) {
+  if (SRC_GROUP[k.s] === "plugin") return `請幫我安裝 ${PLUGIN_NAME[k.s]} plugin，裝好後告訴我裡面有哪些 skill，以及怎麼使用 ${k.n}。`;
+  if (k.n === "impeccable-lite") return "請參考 https://github.com/pbakaus/impeccable ，幫我做一個只有文字規則的 impeccable-lite skill 並安裝：保留設計品質底線、AI 常見俗套清單、技術評分和出貨前打磨流程，不需要它自帶的程式。";
+  return `請幫我安裝這個 Claude skill：${sourceOf(k).url}\n請下載整個資料夾（包含 scripts、data 等附屬檔案），不要只裝 SKILL.md；裝好後告訴我怎麼使用。`;
+}
+async function copyText(t) {
+  try { await navigator.clipboard.writeText(t); return true; } catch (e) {
+    const ta = document.createElement("textarea");
+    ta.value = t; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.append(ta); ta.select();
+    let ok = false;
+    try { ok = document.execCommand("copy"); } catch (_) {}
+    ta.remove();
+    return ok;
+  }
+}
+let toastTimer;
+function toast(text) {
+  const t = $("#toast");
+  t.textContent = text;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 4200);
+}
+function scrollToExplorer() { $("#explorer").scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" }); }
+
+function packMix(p) {
+  const m = {};
+  p.skills.forEach((n) => { const c = byName[n].c; m[c] = (m[c] || 0) + 1; });
+  return Object.entries(m).sort((a, b) => b[1] - a[1] || catOrder[a[0]] - catOrder[b[0]]).map(([c, n]) => `${catLabel[c]} ${n}`).join("、");
+}
+
+/* ---------- Static parts ---------- */
+/* 「獨立 skill」= 不在 plugin 裡、可以單獨安裝的 skill（GitHub＋本站自製）。 */
+function getStats() {
+  const github = LIST.filter((k) => k.s === "gh").length;
+  const self = LIST.filter((k) => k.s === "self").length;
+  const pluginItems = LIST.filter((k) => SRC_GROUP[k.s] === "plugin");
+  const slots = PACKS.flatMap((p) => p.skills);
+  const byCat = {};
+  LIST.forEach((k) => { byCat[k.c] = (byCat[k.c] || 0) + 1; });
+  const st = {
+    total: LIST.length, github, self, standalone: github + self,
+    plugin: pluginItems.length, pluginKinds: new Set(pluginItems.map((k) => k.s)).size,
+    fiveStar: LIST.filter((k) => k.st === 5).length,
+    packs: PACKS.length, packSlots: slots.length, packUnique: new Set(slots).size, byCat
+  };
+  // 不寫死數字，只檢查彼此加得起來
+  const catSum = Object.values(byCat).reduce((a, b) => a + b, 0);
+  if (st.standalone + st.plugin !== st.total || catSum !== st.total) console.warn("skill 統計對不上", st);
+  return st;
+}
+function renderStats() {
+  const st = getStats();
+  const usedCats = CATS.filter(([k]) => st.byCat[k]);
+  $("#headlineTotal").textContent = st.total;
+  $("#ghCount").textContent = st.standalone;
+  $("#ghOnly").textContent = st.github;
+  $("#selfCount").textContent = st.self;
+  $("#pluginCount").textContent = st.plugin;
+  $("#pluginKinds").textContent = st.pluginKinds;
+  $("#statGh").textContent = st.standalone;
+  $("#statPlugin").textContent = st.plugin;
+  $("#statPluginKinds").textContent = st.pluginKinds;
+  $("#fiveStarCount").textContent = st.fiveStar;
+  const srcSel = $("#sourceFilter");
+  srcSel.replaceChildren(new Option("全部來源", "all"));
+  [["gh", "獨立 skill：GitHub"], ["self", "獨立 skill：本站自製"], ["mp", "Matt Pocock plugin"], ["sp", "Superpowers plugin"], ["ff", "ffmpeg-llm plugin"]]
+    .forEach(([v, label]) => srcSel.append(new Option(`${label}（${LIST.filter((k) => k.s === v).length}）`, v)));
+  const inPacks = PACKS.flatMap((p) => p.skills);
+  const shared = [...new Set(inPacks)].filter((n) => inPacks.filter((x) => x === n).length > 1).map((n) => byName[n].t);
+  $("#packUnique").textContent = st.packUnique;
+  $("#showFiveStar").textContent = `看 5 星 skill（${st.fiveStar} 個）`;
+  $("#comparePacks").textContent = `比較 ${st.packs} 種工作流`;
+  $("#packTotal").textContent = st.packs;
+  $("#packsNote").textContent = `每一包只放能串成完整流程的幾個 skill，點一下，下面的清單就只留這一包。${st.packs} 包加起來 ${st.packSlots} 個位置，其中${shared.join("、")}會在不只一包出現，所以實際是 ${st.packUnique} 個不重複的 skill；收錄的 ${st.total} 個裡，其他 ${st.total - st.packUnique} 個在下方完整清單。`;
+  $("#footerMeta").textContent = `資料更新：${DATA_UPDATED}，共 ${st.total} 個 skill：${st.standalone} 個獨立 skill（GitHub ${st.github}、本站自製 ${st.self}）＋${st.pluginKinds} 個 plugin 內含 ${st.plugin} 個，不含 Claude 內建。`;
+  const sel = $("#categoryFilter");
+  sel.append(new Option("全部分類", "all"));
+  usedCats.forEach(([key, label]) => sel.append(new Option(`${label}（${LIST.filter((k) => k.c === key).length}）`, key)));
+}
+function renderRoutes() {
+  const box = $("#routeList");
+  PACKS.forEach((p) => {
+    const b = el("button");
+    b.type = "button";
+    b.dataset.packTarget = p.id;
+    b.style.setProperty("--i", box.children.length);
+    b.append(el("strong", null, p.route[0]), el("span", null, p.route[1]), el("em", null, `精選 ${p.skills.length} 個`));
+    box.append(b);
+  });
+  let i = PACKS.length;
+  const all = $("#routeAll");
+  all.style.setProperty("--i", i++);
+  $("#routeAllCount").textContent = `全部 ${LIST.length} 個`;
+  all.setAttribute("aria-label", `完整清單：全部 ${LIST.length} 個 skill`);
+  all.addEventListener("click", (e) => { e.preventDefault(); openFull("all", true); });
+  const cats = $("#routeCats");
+  CATS.filter(([k]) => LIST.some((s) => s.c === k)).forEach(([key, label]) => {
+    const n = LIST.filter((s) => s.c === key).length;
+    const a = el("a", null, label);
+    a.href = "#cat-" + key;
+    a.style.setProperty("--i", i++);
+    a.append(el("em", null, String(n)));
+    a.setAttribute("aria-label", `${label}，${n} 個`);
+    a.addEventListener("click", (e) => { e.preventDefault(); openFull(key, true); });
+    cats.append(a);
+  });
+}
+function renderPacks() {
+  const grid = $("#packGrid");
+  PACKS.forEach((p) => {
+    const five = p.skills.filter((n) => byName[n].st === 5).length;
+    const b = el("button", "pack-card" + (p.featured ? " featured" : ""));
+    b.type = "button";
+    b.dataset.pack = p.id;
+    b.setAttribute("aria-pressed", "false");
+    const top = el("span", "pack-top");
+    top.append(el("span", "pack-badge", p.badge));
+    if (p.featured) top.append(el("span", "pack-flag", "系統專題首選"));
+    const foot = el("span", "pack-foot");
+    const cnt = el("span");
+    cnt.append(document.createTextNode("精選 "), el("b", null, String(p.skills.length)), document.createTextNode(` 個${five ? `，含 ${five} 個 5★` : ""}`));
+    foot.append(cnt, el("span", "go", "查看內容"));
+    b.append(top, el("span", "pack-title", p.name), el("span", "pack-desc", p.desc), el("span", "pack-flow", p.flow), el("span", "pack-mix", "來自分類：" + packMix(p)), foot);
+    b.setAttribute("aria-label", `${p.name}：${p.desc}（精選 ${p.skills.length} 個，來自分類：${packMix(p)}）`);
+    b.addEventListener("click", () => selectPack(view.pack === p.id ? null : p.id, true));
+    grid.append(b);
+  });
+}
+function renderCategories() {
+  const grid = $("#catGrid");
+  CATS.filter(([k]) => LIST.some((s) => s.c === k)).forEach(([key, label]) => {
+    const items = LIST.filter((s) => s.c === key);
+    const b = el("button", "cat-tile");
+    b.type = "button";
+    b.dataset.cat = key;
+    const top = el("span", "top");
+    top.append(el("strong", null, label), el("em", null, `共 ${items.length} 個`));
+    b.append(top, el("span", "d", CAT_DESC[key] || ""));
+    b.setAttribute("aria-label", `${label}：${items.length} 個 skill，${CAT_DESC[key] || ""}`);
+    b.addEventListener("click", () => openFull(key, true));
+    grid.append(b);
+  });
+  const ex = (packId, cat) => {
+    const p = PACKS.find((x) => x.id === packId);
+    if (!p || !LIST.some((k) => k.c === cat)) return "";
+    const inCat = p.skills.filter((n) => byName[n].c === cat).length;
+    return `「${catLabel[cat]}」共 ${LIST.filter((k) => k.c === cat).length} 個，${p.name}只用了其中 ${inCat} 個，另外 ${p.skills.length - inCat} 個來自別的分類`;
+  };
+  $("#catNote").textContent = `收錄的 ${LIST.length} 個分成 ${grid.children.length} 類，點一類就在下面只顯示那一類。分類是全部，套餐是挑過的精選，所以數字不一樣：${[ex("social", "social"), ex("plan", "slides")].filter(Boolean).join("；")}。`;
+}
+function renderRubric() {
+  const box = $("#rubric");
+  RUBRIC.forEach(([n, word, note]) => {
+    const row = el("div");
+    const s = el("span", "rubric-stars");
+    s.setAttribute("role", "img");
+    s.setAttribute("aria-label", `${n} 星`);
+    const i = el("i", null, "★".repeat(n));
+    i.style.fontStyle = "normal";
+    s.append(i);
+    if (n < 5) s.append(el("em", null, "★".repeat(5 - n)));
+    s.append(el("b", null, `${n} / 5`));
+    row.append(s, el("strong", null, word), el("p", null, note));
+    box.append(row);
+  });
+}
+
+/* ---------- Explorer ---------- */
+function filtered() {
+  let items = LIST;
+  if (view.pack) {
+    const order = PACKS.find((p) => p.id === view.pack).skills.map((n) => byName[n]);
+    return [...order.filter((k) => k.st === 5), ...order.filter((k) => k.st !== 5)];
+  }
+  if (view.scope === "core") items = items.filter((k) => k.st >= 3);
+  items = items.filter((k) => {
+    if (applied.cat !== "all" && k.c !== applied.cat) return false;
+    if (k.st < applied.min) return false;
+    if (applied.src !== "all" && k.s !== applied.src) return false;
+    if (applied.q) {
+      const hay = [k.n, k.t, k.d, k.w || "", catLabel[k.c], SRC[k.s], k.by || ""].join(" ").toLowerCase();
+      return applied.q.toLowerCase().split(/\s+/).filter(Boolean).every((w) => hay.includes(w));
+    }
+    return true;
+  });
+  const sorters = {
+    rating: (a, b) => b.st - a.st || catOrder[a.c] - catOrder[b.c],
+    name: (a, b) => a.n.localeCompare(b.n),
+    category: (a, b) => catOrder[a.c] - catOrder[b.c] || b.st - a.st
+  };
+  return items.slice().sort(sorters[applied.sort]);
+}
+
+function cardEl(k, i, fresh) {
+  const g = SRC_GROUP[k.s];
+  const open = openCards.has(k.n);
+  const card = el("article", "skill-card" + (open ? " open" : "") + (fresh ? " fresh" : ""));
+  card.dataset.rating = k.st;
+  card.dataset.skill = k.n;
+  card.style.setProperty("--i", Math.min(i, 11));
+
+  const top = el("div", "card-topline");
+  const badges = el("span", "badge-row");
+  badges.append(el("span", "source-badge", BADGE[k.s]));
+  if (k.st === 5) badges.append(el("span", "recommend-badge", "最推薦"));
+  top.append(badges, starsEl(k.st, true));
+
+  const head = el("div", "card-heading");
+  head.append(el("h3", null, k.t));
+  const id = el("p", "skill-id", k.n);
+  id.setAttribute("translate", "no");
+  head.append(id);
+
+  const toggle = el("button", "detail-toggle", open ? "收起使用條件" : "查看使用條件");
+  toggle.type = "button";
+  toggle.setAttribute("aria-expanded", String(open));
+  toggle.setAttribute("aria-controls", "details-" + k.n);
+  const details = el("div", "card-details");
+  details.id = "details-" + k.n;
+  details.hidden = !open;
+  const meta = el("div", "card-meta");
+  const r1 = el("p");
+  r1.append(el("span", null, "注意事項"), el("strong", k.w && !k.w.startsWith("自動運作") ? "warn" : null, k.w || "無特殊條件"));
+  const r2 = el("p");
+  r2.append(el("span", null, "來源"), el("strong", null, g === "plugin" ? `${SRC[k.s]}（整包安裝）` : g === "self" ? "本站自製，複製安裝指令貼給 Claude" : `GitHub 獨立 skill（${sourceOf(k).label}）`));
+  meta.append(r1, r2);
+  details.append(meta, el("div", "rating-note", `${k.st} 星，${ruleOf[k.st][1]}：${ruleOf[k.st][2]}`));
+  toggle.addEventListener("click", () => {
+    const now = !card.classList.contains("open");
+    card.classList.toggle("open", now);
+    details.hidden = !now;
+    toggle.setAttribute("aria-expanded", String(now));
+    toggle.textContent = now ? "收起使用條件" : "查看使用條件";
+    now ? openCards.add(k.n) : openCards.delete(k.n);
+  });
+
+  const actions = el("div", "card-actions");
+  const copy = el("button", "copy-button", "複製用法");
+  copy.type = "button";
+  copy.title = "複製一句話，貼進 Claude 就能指定這個 skill";
+  copy.addEventListener("click", async () => {
+    const text = `用 ${k.n} skill 幫我`;
+    const ok = await copyText(text);
+    toast(ok ? `已複製「${text}」，貼進 Claude 再接著說要做什麼。` : `沒辦法自動複製，請手動輸入「${text}」。`);
+    if (ok) {
+      copy.classList.add("done"); copy.textContent = "已複製";
+      setTimeout(() => { copy.classList.remove("done"); copy.textContent = "複製用法"; }, 1800);
+    }
+  });
+  const src = sourceOf(k);
+  let srcA;
+  if (k.s === "self") {
+    srcA = el("span", "source-button disabled", "本站自製");
+    srcA.title = "這個 skill 是本站寫的，沒有 GitHub 來源；按「複製安裝指令」就能裝";
+  } else {
+    srcA = el("a", "source-button", "查看來源");
+    srcA.href = src.url; srcA.target = "_blank"; srcA.rel = "noopener noreferrer";
+    srcA.title = "開啟 " + src.label;
+  }
+  if (k.s === "self") {
+    const body = (document.getElementById(`skill-${k.n}`) || {}).textContent || "";
+    const prompt = `請把下面這份 SKILL.md 原封不動存成我的 skill（名稱 ${k.n}），存好後告訴我怎麼用。\n\n${body.trim()}`;
+    const dl = el("a", "install-button", "複製安裝指令");
+    dl.href = "https://claude.ai/new"; dl.target = "_blank"; dl.rel = "noopener noreferrer";
+    dl.title = "複製整份 SKILL.md 和安裝指令，貼到新的 Claude 對話送出";
+    dl.addEventListener("click", () => {
+      copyText(prompt).then((ok) => toast(ok
+        ? "安裝指令已複製（含整份 SKILL.md）。在新開的 Claude 對話貼上送出，照提示存成 skill。"
+        : "沒辦法自動複製。請把這個 skill 的名稱 reels-maker 告訴分享網頁給你的人，跟他要 SKILL.md。"));
+    });
+    actions.append(copy, srcA, dl);
+    card.append(top, head, el("p", "category-label", catLabel[k.c]), el("p", "description", k.d), toggle, details, actions);
+    return card;
+  }
+  const prompt = installPrompt(k);
+  const ins = el("a", "install-button", g === "plugin" ? "安裝 plugin" : "直接安裝");
+  ins.href = "https://claude.ai/new?q=" + encodeURIComponent(prompt);
+  ins.target = "_blank"; ins.rel = "noopener noreferrer";
+  ins.title = g === "plugin" ? `這個 skill 包在 ${PLUGIN_NAME[k.s]} plugin 裡，會整包一起安裝` : "開新的 Claude 對話並帶入安裝指令";
+  ins.addEventListener("click", () => {
+    copyText(prompt).then((ok) => toast(ok
+      ? "已開新的 Claude 對話並帶入安裝指令。沒帶入的話，貼上送出就好，指令已經複製了。"
+      : "已開新的 Claude 對話。如果沒有帶入指令，請按「查看來源」，把網址貼給 Claude。"));
+  });
+  actions.append(copy, srcA, ins);
+
+  card.append(top, head, el("p", "category-label", catLabel[k.c]), el("p", "description", k.d), toggle, details, actions);
+  return card;
+}
+
+function render(fresh) {
+  const items = filtered();
+  const grid = $("#skillGrid");
+  grid.replaceChildren();
+  const showing = view.pack ? items : items.slice(0, view.shown);
+  showing.forEach((k, i) => grid.append(cardEl(k, i, fresh)));
+  const total = view.pack ? items.length : (view.scope === "core" ? LIST.filter((k) => k.st >= 3).length : LIST.length);
+  $("#resultCount").textContent = `顯示 ${showing.length} / ${items.length} 個 Skills` + (view.pack ? "" : (view.scope === "core" ? "（推薦核心）" : "（完整清單）"));
+  $("#emptyState").hidden = items.length > 0;
+  const rest = items.length - showing.length;
+  $("#loadMoreRow").hidden = rest <= 0;
+  $("#loadMore").textContent = `再顯示 ${Math.min(rest, PAGE)} 個 skills`;
+
+  const bar = $("#activePack");
+  if (view.pack) {
+    const p = PACKS.find((x) => x.id === view.pack);
+    $("#activePackName").textContent = "正在看：" + p.name;
+    $("#activePackInfo").textContent = `精選 ${p.skills.length} 個（${packMix(p)}），最推薦的排最前面`;
+    bar.hidden = false;
+  } else {
+    bar.hidden = true;
+  }
+  document.querySelectorAll(".pack-card").forEach((b) => {
+    const on = b.dataset.pack === view.pack;
+    b.classList.toggle("active", on);
+    b.setAttribute("aria-pressed", String(on));
+    b.querySelector(".go").textContent = on ? "正在查看" : "查看內容";
+  });
+  $("#showRecommended").setAttribute("aria-pressed", String(!view.pack && view.scope === "core"));
+  $("#showAll").setAttribute("aria-pressed", String(!view.pack && view.scope === "all"));
+  void total;
+}
+
+function readControls() {
+  return {
+    q: $("#searchInput").value.trim(),
+    cat: $("#categoryFilter").value,
+    min: Number($("#ratingFilter").value),
+    src: $("#sourceFilter").value,
+    sort: $("#sortFilter").value
+  };
+}
+function isDirty() {
+  const c = readControls();
+  return Object.keys(c).some((k) => c[k] !== applied[k]);
+}
+function syncDirty() { $("#applyFilters").classList.toggle("dirty", isDirty()); }
+function writeControls() {
+  $("#searchInput").value = applied.q;
+  $("#categoryFilter").value = applied.cat;
+  $("#ratingFilter").value = String(applied.min);
+  $("#sourceFilter").value = applied.src;
+  $("#sortFilter").value = applied.sort;
+  syncDirty();
+}
+function applyFilters(scroll) {
+  Object.assign(applied, readControls());
+  view.pack = null;
+  view.shown = PAGE;
+  const narrowing = applied.q || applied.cat !== "all" || applied.src !== "all";
+  if (narrowing && view.scope === "core") view.scope = "all";
+  syncDirty();
+  writeHash();
+  render(true);
+  if (scroll) scrollToExplorer();
+}
+function resetFilters() {
+  Object.assign(applied, { q: "", cat: "all", min: 0, src: "all", sort: "rating" });
+  view.pack = null; view.scope = "core"; view.shown = PAGE;
+  writeControls();
+  writeHash();
+  render(true);
+}
+function selectPack(id, scroll) {
+  view.pack = id;
+  view.shown = PAGE;
+  writeHash();
+  render(true);
+  if (scroll && id) scrollToExplorer();
+}
+function openFull(cat, scroll) {
+  Object.assign(applied, { q: "", cat, min: 0, src: "all", sort: "rating" });
+  view.pack = null; view.scope = "all"; view.shown = PAGE;
+  writeControls();
+  writeHash();
+  render(true);
+  if (scroll) scrollToExplorer();
+}
+function writeHash() {
+  let h = "";
+  if (view.pack) h = "#pack-" + view.pack;
+  else if (view.scope === "all" && !applied.q && applied.min === 0 && applied.src === "all") h = applied.cat === "all" ? "#all" : "#cat-" + applied.cat;
+  if (location.hash === h) return;
+  try { history.replaceState(null, "", h || location.pathname + location.search); } catch (e) {}
+}
+function readHash() {
+  const h = location.hash;
+  const m = /^#pack-([\w-]+)$/.exec(h);
+  const c = /^#cat-([\w-]+)$/.exec(h);
+  if (m && PACKS.some((p) => p.id === m[1])) selectPack(m[1], false);
+  else if (h === "#all") openFull("all", false);
+  else if (c && LIST.some((k) => k.c === c[1])) openFull(c[1], false);
+  else return;
+  setTimeout(scrollToExplorer, 60);
+}
+
+/* ---------- Events ---------- */
+document.addEventListener("click", (e) => {
+  const t = e.target.closest("[data-pack-target]");
+  if (t) selectPack(t.dataset.packTarget, true);
+});
+["#categoryFilter", "#ratingFilter", "#sourceFilter", "#sortFilter"].forEach((s) => $(s).addEventListener("change", syncDirty));
+$("#searchInput").addEventListener("input", syncDirty);
+$("#toolbar").addEventListener("submit", (e) => { e.preventDefault(); $("#searchInput").blur(); applyFilters(true); });
+$("#resetFilters").addEventListener("click", resetFilters);
+$("#emptyReset").addEventListener("click", resetFilters);
+$("#clearPack").addEventListener("click", () => { view.pack = null; view.scope = "all"; writeHash(); render(true); });
+$("#showRecommended").addEventListener("click", () => { view.pack = null; view.scope = "core"; view.shown = PAGE; writeHash(); render(true); });
+$("#showAll").addEventListener("click", () => { view.pack = null; view.scope = "all"; view.shown = PAGE; writeHash(); render(true); });
+$("#showFiveStar").addEventListener("click", () => {
+  Object.assign(applied, { q: "", cat: "all", min: 5, src: "all", sort: "rating" });
+  view.pack = null; view.scope = "all"; view.shown = PAGE;
+  writeControls();
+  writeHash();
+  render(true);
+  scrollToExplorer();
+});
+$("#loadMore").addEventListener("click", () => {
+  const before = view.shown;
+  view.shown += PAGE;
+  render(false);
+  const next = $("#skillGrid").children[before];
+  if (next) next.querySelector("button, a").focus({ preventScroll: true });
+});
+function toTop(after) {
+  window.scrollTo({ top: 0, behavior: reduceMotion() ? "auto" : "smooth" });
+  $("#heroTitle").focus({ preventScroll: true });
+  if (after) toast(after);
+}
+$("#goHome").addEventListener("click", () => {
+  resetFilters();
+  toTop("已回到首頁，篩選和套餐都清掉了，從推薦起點重選吧。");
+});
+$("#goTop").addEventListener("click", () => toTop());
+window.addEventListener("hashchange", readHash);
+
+renderStats();
+renderRoutes();
+renderPacks();
+renderCategories();
+renderRubric();
+writeControls();
+render(false);
+readHash();
+</script>
+</body>
+</html>
