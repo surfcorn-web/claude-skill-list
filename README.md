@@ -2,7 +2,7 @@
 
 給同學的 Claude skill 推薦清單。先依任務挑工作流套餐，或依功能分類瀏覽全部 skill；每個 skill 都附 1–5 星實用指數、來源連結和安裝方式。
 
-整個網站只有一個檔案 `index.html`，不需要建置，放上 GitHub Pages 就能用。
+網站是 `index.html` 加上三個網址列圖標檔（`favicon.svg`、`favicon-32.png`、`apple-touch-icon.png`），不需要建置，放上 GitHub Pages 就能用。
 
 ## 網址
 
