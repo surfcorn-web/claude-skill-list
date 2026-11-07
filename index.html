@@ -157,11 +157,11 @@ a { color: inherit; text-underline-offset: .2em; }
 
 /* ---------- Explorer ---------- */
 .category-section { padding-top: 24px; padding-bottom: 24px; }
-.cat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; }
-.cat-tile { min-height: 118px; padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: .3rem; border: 1px solid var(--line); border-radius: var(--r-md); color: var(--ink); background: var(--card); text-align: left; cursor: pointer; transition: border-color .18s, box-shadow .18s; }
+.cat-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .8rem; }
+.cat-tile { min-height: 118px; padding: 1rem; display: flex; flex-direction: column; gap: .3rem; border: 1px solid var(--line); border-radius: var(--r-md); color: var(--ink); background: var(--card); text-align: left; cursor: pointer; transition: border-color .18s, box-shadow .18s; }
 .cat-tile:hover, .cat-tile:focus-visible { border-color: var(--blue); box-shadow: var(--shadow-soft); }
-.cat-tile .top { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
-.cat-tile strong { font-size: 1.05rem; }
+.cat-tile .top { display: flex; justify-content: space-between; align-items: baseline; gap: .4rem; }
+.cat-tile strong { font-size: 1rem; }
 .cat-tile em { font-style: normal; color: var(--link); font-weight: 800; font-size: .86rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .cat-tile span.d { color: var(--muted); font-size: .86rem; }
 .explorer-section { padding-top: 72px; }
@@ -170,7 +170,7 @@ a { color: inherit; text-underline-offset: .2em; }
 .scope-switch { margin-top: 1.15rem; display: inline-flex; padding: .25rem; border: 1px solid var(--line); border-radius: 999px; background: var(--paper-2); }
 .scope-switch button { min-height: 40px; padding: .45rem .95rem; border: 0; border-radius: 999px; color: var(--muted); background: transparent; cursor: pointer; font-weight: 800; transition: background-color .18s, color .18s; }
 .scope-switch button[aria-pressed="true"] { color: #fff; background: var(--blue-dark); }
-.toolbar { position: sticky; top: 12px; z-index: 20; padding: .8rem; display: grid; grid-template-columns: minmax(240px, 1.7fr) repeat(4, minmax(112px, .58fr)) minmax(215px, .88fr); gap: .65rem; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--toolbar-bg); box-shadow: 0 12px 30px rgba(8, 35, 72, .1); }
+.toolbar { position: sticky; top: 12px; z-index: 20; padding: .8rem; display: grid; grid-template-columns: minmax(220px, 1.5fr) minmax(150px, .75fr) repeat(3, minmax(112px, .56fr)) minmax(215px, .88fr); gap: .65rem; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--toolbar-bg); box-shadow: 0 12px 30px rgba(8, 35, 72, .1); }
 .toolbar label { display: flex; flex-direction: column; gap: .25rem; color: var(--muted); font-size: .74rem; font-weight: 800; min-width: 0; }
 .toolbar input, .toolbar select, .reset-button, .apply-button { width: 100%; min-height: 44px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: var(--card); }
 .toolbar select { padding: 0 .7rem; cursor: pointer; }
@@ -377,6 +377,9 @@ body::after { background: radial-gradient(30vmax 26vmax at 70% 24%, var(--glow-c
   .hero::before, .apply-button.dirty, body::before, body::after { animation: none !important; }
   .button:hover, .pack-card:hover, .cat-tile:hover, .skill-card:hover, .route-cats a:hover { transform: none !important; }
 }
+@media (max-width: 1240px) and (min-width: 1051px) {
+  .cat-tile .top { flex-direction: column; align-items: flex-start; gap: 0; }
+}
 @media (max-width: 1050px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 3rem; padding-top: 60px; min-height: 0; }
   .hero-panel { max-width: 720px; width: 100%; }
@@ -384,7 +387,7 @@ body::after { background: radial-gradient(30vmax 26vmax at 70% 24%, var(--glow-c
   .toolbar { position: static; grid-template-columns: 1.5fr repeat(2, minmax(0, 1fr)); }
   .toolbar-actions { grid-column: span 2; }
   .pack-card { grid-column: span 6; }
-  .cat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .install-grid { grid-template-columns: minmax(0, 1fr); }
   html { scroll-padding-top: 20px; }
 }
@@ -456,14 +459,14 @@ body::after { background: radial-gradient(30vmax 26vmax at 70% 24%, var(--glow-c
       <h1 id="heroTitle" tabindex="-1">把 Claude skills 變成能直接開工的工具箱。</h1>
       <p class="hero-lead">不用背名稱，也不用一次裝滿。先說你要完成什麼，把真正用得上的工作流排在前面，再用星等、來源和注意事項幫你做最後判斷。</p>
       <div class="hero-cta">
-        <button class="button primary" type="button" id="showFiveStar">看 5 星 skill（6 個）</button>
+        <button class="button primary" type="button" id="showFiveStar">看 5 星 skill（7 個）</button>
         <a class="button secondary" href="#starter-packs" id="comparePacks">比較 6 種工作流</a>
       </div>
-      <p class="microcopy">目前收錄 <strong id="headlineTotal">88</strong> 個 skill：<strong id="ghCount">33</strong> 個獨立 skill（GitHub <span id="ghOnly">32</span>、本站自製 <span id="selfCount">1</span>），加上 <span id="pluginKinds">3</span> 個 plugin 內含的 <strong id="pluginCount">55</strong> 個（不含 Claude 內建）。<span id="packTotal">6</span> 個工作流套餐從中挑了 <strong id="packUnique">28</strong> 個最常用的，其餘都在下方的完整清單。</p>
+      <p class="microcopy">目前收錄 <strong id="headlineTotal">99</strong> 個 skill：<strong id="ghCount">55</strong> 個獨立 skill（GitHub <span id="ghOnly">54</span>、本站自製 <span id="selfCount">1</span>），加上從 <span id="pluginKinds">3</span> 個 plugin 裡挑出的 <strong id="pluginCount">44</strong> 個（不含 Claude 內建）。<span id="packTotal">6</span> 個工作流套餐從中挑了 <strong id="packUnique">28</strong> 個最常用的，其餘都在下方的完整清單。</p>
       <dl class="stat-row" aria-label="Skill 統計摘要">
-        <div><dt>獨立 skill</dt><dd id="statGh">33</dd></div>
-        <div><dt><span id="statPluginKinds">3</span> 個 plugin 內含</dt><dd id="statPlugin">55</dd></div>
-        <div><dt>5★ 首選</dt><dd id="fiveStarCount">6</dd></div>
+        <div><dt>獨立 skill</dt><dd id="statGh">55</dd></div>
+        <div><dt>從 <span id="statPluginKinds">3</span> 個 plugin 挑出</dt><dd id="statPlugin">44</dd></div>
+        <div><dt>5★ 首選</dt><dd id="fiveStarCount">7</dd></div>
       </dl>
     </div>
     <aside class="hero-panel" aria-labelledby="routeTitle">
@@ -475,7 +478,7 @@ body::after { background: radial-gradient(30vmax 26vmax at 70% 24%, var(--glow-c
       <a class="route-all" href="#all" id="routeAll">
         <strong>完整清單</strong>
         <span>全部攤開，依分類、星等篩選</span>
-        <em id="routeAllCount">全部 88 個</em>
+        <em id="routeAllCount">全部 99 個</em>
       </a>
       <nav class="route-cats" id="routeCats" aria-label="依分類打開完整清單"></nav>
       <p>如果你在做課程專題，先從「系統網頁包」開始。</p>
@@ -487,7 +490,7 @@ body::after { background: radial-gradient(30vmax 26vmax at 70% 24%, var(--glow-c
   <section class="section starter-section" id="starter-packs" aria-labelledby="packsTitle">
     <div class="section-heading">
       <h2 id="packsTitle">先選任務，再看需要哪些 skills。</h2>
-      <p id="packsNote">每一包只放能串成完整流程的幾個 skill，點一下，下面的清單就只留這一包。6 包加起來 33 個位置，其中Reels 腳本、Reels 成片、繁中去 AI 味、逼問到想清楚會在不只一包出現，所以實際是 28 個不重複的 skill；收錄的 88 個裡，其他 60 個在下方完整清單。</p>
+      <p id="packsNote">每一包只放能串成完整流程的幾個 skill，點一下，下面的清單就只留這一包。6 包加起來 33 個位置，其中Reels 腳本、Reels 成片、繁中去 AI 味、逼問到想清楚會在不只一包出現，所以實際是 28 個不重複的 skill；收錄的 99 個裡，其他 71 個在下方完整清單。</p>
     </div>
     <div class="pack-grid" id="packGrid"></div>
   </section>
@@ -495,7 +498,7 @@ body::after { background: radial-gradient(30vmax 26vmax at 70% 24%, var(--glow-c
   <section class="section category-section" id="categories" aria-labelledby="catTitle">
     <div class="section-heading">
       <h2 id="catTitle">或依功能分類看全部。</h2>
-      <p id="catNote">收錄的 88 個分成 8 類，點一類就在下面只顯示那一類。分類是全部，套餐是挑過的精選，所以數字不一樣：「社群行銷」共 18 個，社群經營包只用了其中 6 個，另外 1 個來自別的分類；「簡報」共 3 個，簡報企劃包只用了其中 2 個，另外 3 個來自別的分類。</p>
+      <p id="catNote">收錄的 99 個分成 10 類，點一類就在下面只顯示那一類。分類是全部，套餐是挑過的精選，所以數字不一樣：「社群行銷」共 18 個，社群經營包只用了其中 6 個，另外 1 個來自別的分類；「簡報」共 2 個，簡報企劃包只用了其中 2 個，另外 3 個來自別的分類。</p>
     </div>
     <div class="cat-grid" id="catGrid"></div>
   </section>
@@ -588,7 +591,7 @@ body::after { background: radial-gradient(30vmax 26vmax at 70% 24%, var(--glow-c
       <div class="install-card">
         <span class="source-badge">自製 skill</span>
         <h3>複製指令，貼給 Claude</h3>
-        <p>本站自己寫的 skill（目前是 Reels 成片）沒有放在 GitHub。按卡片上的「複製安裝指令」，整份 SKILL.md 會一起複製；在新開的 Claude 對話貼上送出，照提示存成 skill。</p>
+        <p>本站自己寫的 skill（目前是 Reels 成片），原始檔放在本站的 GitHub repo。按卡片上的「複製安裝指令」，整份 SKILL.md 會一起複製；在新開的 Claude 對話貼上送出，照提示存成 skill。也可以按「查看來源」到 GitHub 看原始檔。</p>
         <p class="small">需要先在設定裡開啟程式碼執行與檔案建立。</p>
       </div>
       <div class="install-card">
@@ -616,7 +619,7 @@ body::after { background: radial-gradient(30vmax 26vmax at 70% 24%, var(--glow-c
     <strong>謝小明的 Claude Skill 推薦清單</strong>
     <p>把選擇變簡單，把工具用在真正需要的地方。</p>
   </div>
-  <p id="footerMeta">資料更新：2026-11-07，共 88 個 skill：33 個獨立 skill（GitHub 32、本站自製 1）＋3 個 plugin 內含 55 個，不含 Claude 內建。</p>
+  <p id="footerMeta">資料更新：2026-11-07，共 99 個 skill：55 個獨立 skill（GitHub 54、本站自製 1）＋從 3 個 plugin 挑出 44 個，不含 Claude 內建。</p>
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -805,13 +808,17 @@ const SRC = { gh: "GitHub", self: "本站自製", mp: "Plugin：Skills For Real 
 const SRC_GROUP = { gh: "gh", self: "self", mp: "plugin", sp: "plugin", ff: "plugin", builtin: "builtin", sys: "builtin" };
 const BADGE = { gh: "獨立 skill", self: "獨立 skill（自製）", mp: "Matt Pocock plugin", sp: "Superpowers plugin", ff: "ffmpeg-llm plugin" };
 const CATS = [
-  ["office", "文件與辦公"], ["social", "社群行銷"], ["slides", "簡報"], ["write", "寫作與研究"], ["think", "思考與企劃"],
-  ["design", "設計與網頁"], ["media", "影音"], ["browser", "瀏覽器與電腦操作"],
-  ["dev", "程式開發"], ["meta", "Claude 使用與管理"]
+  /* 第一排：行銷與內容 */
+  ["marketing", "行銷與 SEO"], ["social", "社群行銷"], ["media", "影音與 AI 生成"], ["write", "寫作與研究"], ["slides", "簡報"],
+  /* 第二排：思考、網頁與工具 */
+  ["think", "思考與企劃"], ["design", "設計與網頁"], ["motion", "動效與動畫"], ["dev", "程式開發"], ["meta", "Claude 使用與管理"],
+  /* 只有 Claude 內建的 skill 用到，不會顯示 */
+  ["office", "文件與辦公"], ["browser", "瀏覽器與電腦操作"]
 ];
 const CAT_DESC = {
+  marketing: "文案、廣告、品牌語氣、SEO／GEO、數據追蹤",
   social: "社群貼文、說明文字、輪播、Reels 腳本與成片", slides: "學術簡報與 AI 生圖簡報", write: "查資料、寫文章、潤稿",
-  think: "逼問想法、做問卷、腦力激盪", design: "網頁設計、介面檢查、React 效能", media: "用白話剪輯影片",
+  think: "逼問想法、做問卷、腦力激盪", design: "網頁設計、高質感排版、介面檢查", motion: "網頁動畫、微互動、手勢與 Logo 動畫", media: "剪輯影片、AI 生圖與生影片",
   dev: "規格、測試、除錯、審查、Git", meta: "Claude 使用技巧、交接、自己做 skill", office: "文件與辦公", browser: "瀏覽器與電腦操作"
 };
 const RUBRIC = [
@@ -884,7 +891,20 @@ const SKILLS = [
   // 簡報
   { n: "academic-pptx", t: "學術簡報", c: "slides", s: "gh", st: 5, by: "Gabberflast/academic-pptx-skill", u: "https://github.com/Gabberflast/academic-pptx-skill", d: "口試、課堂報告、研討會用。每頁標題直接寫結論、一頁一個重點、圖表附出處，最後一頁放結論而不是「謝謝聆聽」。會跟內建的 pptx 一起運作。" },
   { n: "codex-ppt", t: "圖片式簡報（Codex PPT）", c: "slides", s: "gh", st: 5, by: "ningzimu/codex-ppt-skill", u: "https://github.com/ningzimu/codex-ppt-skill/tree/main/skills/codex-ppt", d: "把文章、報告、論文或課堂筆記做成整頁圖片式的 16:9 簡報：先確認大綱，從 12 種內建風格挑一種（麥肯錫、科研答辯、手繪技術解釋等），出一張樣張給你看，滿意再整套生成，最後附講稿組成 PPTX。", w: "Claude 本身不會生圖，要接 OpenAI 相容的生圖 API（用你自己的 API key，按張計費），還要在設定裡允許程式連外網；它預設用子 agent 平行出圖，claude.ai 沒有子 agent，要跟它說「一頁一頁生成就好」。每頁是一整張圖，字不能直接改。" },
-  { n: "ppt-generation", t: "AI 生圖簡報", c: "slides", s: "gh", st: 1, by: "bytedance/deer-flow", u: "https://github.com/bytedance/deer-flow", d: "設計成每一頁先用 AI 生成整張圖片，再組成 PPT。", w: "它依賴 DeerFlow 平台自己的生圖工具，在 claude.ai 上跑不起來。做簡報請改用 pptx 或 academic-pptx。" },
+  { n: "emil-design-eng", t: "Motion Engineering 動效工程", c: "motion", s: "gh", st: 4, by: "emilkowalski/skills", u: "https://github.com/emilkowalski/skills/tree/main/skills/emil-design-eng", d: "Sonner、Vaul 作者 Emil Kowalski 的介面打磨心法：只讓需要的東西動。像勾選或刪除待辦事項時，不會整串列表閃一下重畫，只有目標項目移動，下面的項目平滑補位；按鈕按壓、進場出場的緩動也都有講究。" },
+  { n: "apple-design", t: "Apple Design 蘋果手感", c: "motion", s: "gh", st: 4, by: "emilkowalski/skills", u: "https://github.com/emilkowalski/skills/tree/main/skills/apple-design", d: "把 iOS、macOS 的流暢手感帶到網頁：彈簧動畫、拖曳和滑動手勢、可以中途打斷的轉場、數字滾動與圓環進度條的緩動、毛玻璃材質和層次，以及字距行高。" },
+  { n: "gsap-skills", t: "GSAP 動畫官方包", c: "motion", s: "gh", st: 4, by: "greensock/gsap-skills", u: "https://github.com/greensock/gsap-skills", d: "GSAP 官方出的 8 個 skill：時間軸、捲動觸發動畫（ScrollTrigger）、React／Vue 寫法、外掛和效能調校。讓 Claude 寫網頁動畫時用對 API，也記得清除和支援減少動態設定。", w: "8 個 skill 要分別上傳；做出來的網頁要載入 GSAP 函式庫。" },
+  { n: "motion-design", t: "動態設計原則", c: "motion", s: "gh", st: 4, by: "lottiefiles/motion-design-skill", u: "https://github.com/lottiefiles/motion-design-skill/tree/main/skills/motion-design", d: "LottieFiles 出的動態設計原則：把迪士尼動畫原則用在介面上，告訴 Claude 時間長短、緩動曲線、多個元素怎麼編排，載入畫面和轉場怎麼做才自然。CSS、GSAP、Lottie 都適用。", w: "裡面有 director、patterns、reference 三個資料夾，要整包上傳。" },
+  { n: "css-animation", t: "CSS 功能示範動畫", c: "motion", s: "gh", st: 3, by: "neonwatty/css-animation-skill", u: "https://github.com/neonwatty/css-animation-skill", d: "把 App 或網站的某個功能做成可以循環播放的 HTML/CSS 示範動畫，用在功能介紹、教學和新手導覽：先看畫面、問你重點，寫好腳本後產出單一 HTML 檔，再一格一格停下來檢查到你滿意。", w: "研究和檢查階段要用 Claude in Chrome 操作你的網站；沒有的話可以用口頭描述畫面，跳過研究階段。" },
+  { n: "pixel2motion", t: "Logo 轉動畫", c: "motion", s: "gh", st: 2, by: "nolangz/pixel2motion", u: "https://github.com/nolangz/pixel2motion", d: "把 PNG、JPG 的 Logo 描成乾淨的 SVG，再做成套用迪士尼 12 原則的 Logo 動畫，輸出可以直接打開的 HTML。", w: "要用 Python 加無頭 Chrome 量測描邊品質，claude.ai 上多半裝不起來，比較適合在 Claude Code 用。" },
+  { n: "high-end-visual-design", t: "High-end 高質感排版", c: "design", s: "gh", st: 3, by: "leonxlnx/taste-skill（舊版）", u: "https://github.com/leonxlnx/taste-skill/tree/b9ca2fd8047f4c72d7da90ebc1c1203e57c72cd2/skills/soft-skill", d: "專治手機版排版災難：文字不再貼著螢幕邊緣，自動套用合理邊距、膠囊按鈕、雙層卡片和有層次的現代陰影，再加上柔和的彈簧動態，擺脫 AI 預設的模板感。", w: "作者已把它併進 taste-skill，這裡連到舊版原始檔；它只在你點名時才會啟動，例如「用 high-end-visual-design 重排這頁」。" },
+  { n: "design-taste-frontend", t: "Taste 反模板網頁設計", c: "design", s: "gh", st: 3, by: "leonxlnx/taste-skill", u: "https://github.com/leonxlnx/taste-skill", d: "專做公司官網、產品頁：文案有自己的口吻、一屏一個重點、用真實照片和產品畫面，首屏進場加一兩個亮點動畫，最後還會在瀏覽器裡實際檢查成品。", w: "整包約 40MB（含大量範例圖），超過 claude.ai 的上傳上限，建議在 Claude Code 用。" },
+  { n: "impeccable", t: "Impeccable 設計完整版", c: "design", s: "gh", st: 4, by: "pbakaus/impeccable", u: "https://github.com/pbakaus/impeccable", d: "impeccable 的完整版：用 polish、bolder 調整風格，用 critique、audit 審查，並在交付前抓出 AI 味的設計。比本清單的 impeccable-lite 多了指令和檢查腳本。", w: "完整版要在 Claude Code 用 npx impeccable install 安裝；在 claude.ai 上用 impeccable-lite 就好。" },
+  { n: "garden-skills", t: "Garden 中文技能包", c: "design", s: "gh", st: 3, by: "ConardLi/garden-skills", u: "https://github.com/ConardLi/garden-skills", d: "6 個 skill：把素材排成漂亮的單頁 HTML 文章、把文章做成像影片的網頁簡報、用程式做動效影片、前端視覺設計、GPT Image 2 生圖提示詞、本機知識庫檢索。", w: "說明是簡體中文；生圖和配音要另外接 API，部分功能要在自己電腦上跑。" },
+  { n: "fal-skills", t: "fal.ai 生圖生影片", c: "media", s: "gh", st: 3, by: "fal-ai-community/skills", u: "https://github.com/fal-ai-community/skills", d: "fal.ai 的 36 個 skill：商品攝影、廣告短片、Reels 素材、分鏡轉短片、角色設計、配樂。會告訴 Claude 該挑哪個模型、提示詞怎麼下。", w: "真的要出圖、出影片需要 fal.ai 帳號和 FAL_KEY（按量計費），還要允許程式連外網；只想學怎麼下提示詞，先裝 fal-prompting 就好。" },
+  { n: "scenario-skills", t: "Scenario AI 素材生成", c: "media", s: "gh", st: 2, by: "scenario-labs/skills", u: "https://github.com/scenario-labs/skills", d: "Scenario 平台的 175 個 skill：AI 生圖、生影片、做 3D 模型、配樂、廣告短片，另外有一大批 Unity、Godot、Unreal 遊戲開發指南。", w: "生成功能要 Scenario 帳號和 API 金鑰（付費）；遊戲引擎那部分是給做遊戲的人。" },
+  { n: "google-skills", t: "Google 官方技能包", c: "dev", s: "gh", st: 2, by: "google/skills", u: "https://github.com/google/skills", d: "Google 官方的 192 個 skill，涵蓋 Google Cloud、Firebase、Gemini API、BigQuery、GKE、Google 登入，讓 Claude 照官方做法設定和部署。", w: "大多要 Google Cloud 帳號和 gcloud 指令，適合在 Claude Code 用；只挑用得到的幾個裝。" },
+  { n: "craft-skill", t: "Craft CMS 管理", c: "dev", s: "gh", st: 1, by: "happycog/craft-skill", u: "https://github.com/happycog/craft-skill", d: "讓 AI 用指令管理 Craft CMS 網站：文章、欄位、區塊、使用者，以及 Commerce 的商品和訂單。", w: "要先有架好的 Craft CMS 網站並裝它的 PHP 套件；沒在用 Craft 就用不到。" },
 
   // 寫作與研究
   { n: "humanizer-zh-tw", t: "繁中去 AI 味", c: "write", s: "gh", st: 5, by: "kevintsai1202/humanizer-zh-tw", u: "https://github.com/kevintsai1202/humanizer-zh-tw", d: "刪掉空話、套話和公式化句型，讓文章讀起來像人寫的，同時保留原本的事實和語氣。FB 貼文、心得、報告潤稿都適用。" },
@@ -912,7 +932,6 @@ const SKILLS = [
   { n: "impeccable-lite", t: "設計品質底線", c: "design", s: "gh", st: 3, by: "pbakaus/impeccable（精簡版）", u: "https://github.com/pbakaus/impeccable", d: "列出好網頁一定要過的檢查（對比、間距、各種狀態）和 AI 常見的俗套設計，並附技術評分與出貨前打磨流程。", w: "這是我改的精簡文字版。原版 impeccable 功能更多，但要執行它自帶的程式，在 claude.ai 上不一定能用。" },
   { n: "frontend-design", t: "前端設計方向", c: "design", s: "sys", st: 4, d: "做網頁或介面時，引導 Claude 做出有個性、不像套版的設計。", w: "自動運作，不用特別叫它。" },
   { n: "vercel-react-best-practices", t: "React 效能守則", c: "design", s: "gh", st: 2, by: "vercel-labs/agent-skills", u: "https://github.com/vercel-labs/agent-skills", d: "Vercel 工程團隊整理的 React／Next.js 效能寫法，寫前端程式的同學才用得到。" },
-  { n: "react-performance-optimization", t: "React 效能優化", c: "design", s: "gh", st: 1, by: "NickCrew/claude-ctx-plugin", u: "https://github.com/NickCrew/claude-ctx-plugin", d: "memo、程式碼分割等 React 優化技巧。", w: "跟 vercel-react-best-practices 重疊，二選一即可。" },
 
   // 影音
   { n: "video-making", t: "製作影片", c: "media", s: "builtin", st: 3, d: "用程式產生短影片或動畫，例如產品介紹、數據動態圖。它不是用來剪你自己拍的影片。" },
@@ -941,7 +960,6 @@ const SKILLS = [
   { n: "systematic-debugging", t: "系統化除錯", c: "dev", s: "sp", st: 2, u: SP, d: "遇到錯誤先找根本原因再修，避免亂試。", w: "跟 diagnosing-bugs 重疊。" },
   { n: "verification-before-completion", t: "說完成前先驗證", c: "dev", s: "sp", st: 2, u: SP, d: "要宣稱「做好了」之前，一定先實際跑過、看到結果。" },
   { n: "wayfinder", t: "大型工作地圖", c: "dev", s: "mp", st: 1, u: MP, d: "把一次對話做不完的大工程，拆成一張決策清單逐一處理。" },
-  { n: "triage", t: "議題分類", c: "dev", s: "mp", st: 1, u: MP, d: "整理 GitHub 的 issue 和外部 PR：分類、驗證，寫成可以直接交辦的說明。" },
   { n: "implement", t: "照工作單實作", c: "dev", s: "mp", st: 1, u: MP, d: "依規格或工作單把功能寫出來。" },
   { n: "implement-spec", t: "照規格實作", c: "dev", s: "mp", st: 1, u: MP, d: "專門接 to-spec 和 to-tickets 的產出，把規格寫成程式。" },
   { n: "pr", t: "寫 PR 說明", c: "dev", s: "mp", st: 1, u: MP, d: "幫你寫 GitHub Pull Request 的說明內容。" },
@@ -949,19 +967,10 @@ const SKILLS = [
   { n: "codebase-design", t: "模組設計", c: "dev", s: "mp", st: 1, u: MP, d: "設計模組介面、找出可以簡化的地方，讓程式更好測、更好讀。" },
   { n: "improve-codebase-architecture", t: "架構改善報告", c: "dev", s: "mp", st: 1, u: MP, d: "掃描整個程式庫，產出一份視覺化的改善建議報告。" },
   { n: "domain-modeling", t: "領域模型", c: "dev", s: "mp", st: 1, u: MP, d: "整理專案用語、名詞表和架構決策紀錄（ADR）。" },
-  { n: "setup-matt-pocock-skills", t: "開發套件初始化", c: "dev", s: "mp", st: 1, u: MP, d: "第一次用這套開發 skill 之前，先設定 issue 追蹤方式和文件位置。" },
-  { n: "setup-pre-commit", t: "提交前自動檢查", c: "dev", s: "mp", st: 1, u: MP, d: "幫專案裝好 Husky，在 commit 前自動排版、做型別檢查、跑測試。" },
-  { n: "setup-ts-deep-modules", t: "TypeScript 模組邊界", c: "dev", s: "mp", st: 1, u: MP, d: "用 dependency-cruiser 限制模組之間可以怎麼互相引用。" },
-  { n: "git-guardrails-claude-code", t: "Git 防呆", c: "dev", s: "mp", st: 1, u: MP, d: "在 Claude Code 擋下 push、reset --hard 這類危險的 Git 指令。" },
-  { n: "migrate-to-shoehorn", t: "測試寫法轉換", c: "dev", s: "mp", st: 1, u: MP, d: "把測試裡的 as 型別斷言改成 shoehorn 的寫法。" },
-  { n: "scaffold-exercises", t: "程式練習題架構", c: "dev", s: "mp", st: 1, u: MP, d: "建立程式課的練習題資料夾結構，比較適合老師或助教。" },
-  { n: "wizard", t: "步驟引導腳本", c: "dev", s: "mp", st: 1, u: MP, d: "產生一個互動式腳本，帶人一步步完成只能手動做的設定，例如申請帳號、設定金鑰。" },
   { n: "subagent-driven-development", t: "分派子代理開發", c: "dev", s: "sp", st: 1, u: SP, d: "把計畫中互相獨立的任務交給多個子代理分頭完成。" },
   { n: "dispatching-parallel-agents", t: "平行處理任務", c: "dev", s: "sp", st: 1, u: SP, d: "兩件以上互不相干的工作同時進行。" },
   { n: "requesting-code-review", t: "送出審查", c: "dev", s: "sp", st: 1, u: SP, d: "功能完成後主動送審查，對照需求確認。" },
   { n: "receiving-code-review", t: "回應審查意見", c: "dev", s: "sp", st: 1, u: SP, d: "收到審查意見時先驗證對不對，不照單全收。" },
-  { n: "using-git-worktrees", t: "Git 工作樹", c: "dev", s: "sp", st: 1, u: SP, d: "開一個隔離的工作空間來做新功能。" },
-  { n: "finishing-a-development-branch", t: "收尾分支", c: "dev", s: "sp", st: 1, u: SP, d: "功能做完、測試通過後，決定怎麼合併回主線。" },
 
   // Claude 使用與管理
   { n: "skill-creator", t: "自己做 skill", c: "meta", s: "builtin", st: 4, d: "把你常做的流程（例如固定格式的週報）做成 skill，之後一句話就能套用；也能測試、改良現有的 skill。" },
@@ -978,15 +987,24 @@ const SKILLS = [
   { n: "writing-for-agents", t: "寫給 AI 看的文件", c: "meta", s: "mp", st: 2, u: MP, d: "寫 skill、CLAUDE.md 這類給 AI 讀的說明文件時用。" },
   { n: "ask-matt", t: "該用哪個 skill", c: "meta", s: "mp", st: 2, u: MP, d: "告訴它你的情況，它會推薦 Matt Pocock 這套裡適合的 skill 或流程。" },
   { n: "using-superpowers", t: "Superpowers 總開關", c: "meta", s: "sp", st: 1, u: SP, d: "讓 Claude 每次回答前先檢查有沒有該用的 skill，是這套 plugin 的運作核心，不用自己叫它。" },
-  { n: "diagnosing-superpowers", t: "Superpowers 問題診斷", c: "meta", s: "sp", st: 1, u: SP, d: "Superpowers 表現怪怪的時候，用來分析原因或整理問題回報。" },
   { n: "cowork-plugin", t: "製作 plugin", c: "meta", s: "sys", st: 1, d: "從零做一個 plugin，或幫公司客製已經安裝的 plugin。" },
   { n: "plugin-authoring", t: "改造 Claude 介面", c: "meta", s: "sys", st: 1, d: "做 Claude 介面上的小外掛，例如側邊面板、狀態列、快捷指令。" },
 
   // 社群行銷
+  { n: "copywriting", t: "行銷文案（官網與著陸頁）", c: "marketing", s: "gh", st: 5, by: "coreyhaines31/marketingskills", u: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/copywriting", d: "寫或改官網、著陸頁、產品頁、定價頁的文案：先釐清受眾、痛點和賣點，再給標題、副標、內文和行動按鈕，附上改寫理由和替代版本。", w: "有 references 資料夾，要整包上傳。" },
+  { n: "marketingskills", t: "行銷技能全套（Corey Haines）", c: "marketing", s: "gh", st: 4, by: "coreyhaines31/marketingskills", u: "https://github.com/coreyhaines31/marketingskills", d: "53 個行銷 skill：文案、廣告、SEO 與 AI 搜尋、轉換率優化、定價、電子報、新品上市、競品分析、行銷心理學。每個都有清楚的步驟和範例。", w: "53 個要分別上傳，先挑工作上用得到的；大多只靠對話就能用，少數生圖、配音的功能要另外接 API。" },
+  { n: "ad-creative", t: "廣告素材文案", c: "marketing", s: "gh", st: 4, by: "coreyhaines31/marketingskills", u: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/ad-creative", d: "替 Google、Meta、LinkedIn、TikTok 等廣告平台大量產生標題、內文和整組廣告變化版，照各平台字數限制寫，也能依成效數據再迭代。", w: "要整包上傳；生成圖片或配音的功能要另外接 Gemini、ElevenLabs 的 API。" },
+  { n: "brand-voice", t: "品牌語氣手冊", c: "marketing", s: "gh", st: 4, by: "rampstackco/claude-skills", u: "https://github.com/rampstackco/claude-skills/tree/main/skills/brand-voice", d: "替品牌建立完整的語氣規範：個性形容詞、不同情境的語氣調整、用字偏好、文法規則和正反範例，也能檢查現有文案有沒有走調。", w: "有 references 資料夾，要整包上傳。" },
+  { n: "content-atomizer", t: "一稿多用內容拆解", c: "marketing", s: "gh", st: 4, by: "thevibemarketershq（gist）", u: "https://gist.github.com/thevibemarketershq/048d220c0ed333a2f4e476a8cc125a3b", d: "把一篇部落格、電子報、Podcast 或影片拆成 LinkedIn、X、IG、TikTok、YouTube、Threads 等平台的貼文草稿，附各平台的開頭鉤子公式和一週發文排程。", w: "gist 裡有兩個版本，裝 free-content-atomizer 那個就好；要自動排程上架得另外接 Buffer 等工具。" },
+  { n: "analytics", t: "追蹤與數據分析", c: "marketing", s: "gh", st: 3, by: "coreyhaines31/marketingskills", u: "https://github.com/coreyhaines31/marketingskills/tree/main/skills/analytics", d: "規劃 GA4、Google 代碼管理工具（GTM）、UTM 參數和事件追蹤：先列出要量測什麼，再給追蹤計畫和設定步驟，也能檢查現有設定漏了什麼。", w: "實際設定要你自己進 GA4、GTM 後台操作，Claude 給的是計畫和步驟。" },
+  { n: "seo-content", t: "SEO 內容品質檢查", c: "marketing", s: "gh", st: 3, by: "AgriciDaniel/claude-seo", u: "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-content", d: "檢查網頁內容實不實用、有沒有 E-E-A-T（經驗、專業、權威、可信）、好不好讀、會不會太單薄、AI 搜尋會不會引用，最後再清掉 AI 腔和隱形浮水印字元。", w: "它是 claude-seo plugin 的一部分，會引用 plugin 裡的評分標準和清理腳本；單獨裝只能用主要的內容評估。" },
+  { n: "seo-geo-skills", t: "SEO＋GEO 技能包", c: "marketing", s: "gh", st: 3, by: "aaron-he-zhu/seo-geo-claude-skills", u: "https://github.com/aaron-he-zhu/seo-geo-claude-skills", d: "20 個 SEO 和 GEO（讓 AI 搜尋引用你）skill：關鍵字研究、競品與內容缺口、站內 SEO 檢查、結構化資料、內容撰寫與更新、排名追蹤。", w: "這個 repo 已改成指引頁，最新版搬到 aaron-marketing-skills；排名、反向連結等監測功能要接 SEO 資料工具。" },
+  { n: "yao-geo-skills", t: "Yao GEO 中文技能包", c: "marketing", s: "gh", st: 3, by: "yaojingang/yao-geo-skills", u: "https://github.com/yaojingang/yao-geo-skills", d: "24 個 GEO（生成式引擎優化）skill，針對 DeepSeek、豆包、ChatGPT 等 AI 搜尋：全站診斷、90 天執行路線圖、標題和文章 AI 友好化、小紅書與抖音內容、知識庫、成效追蹤。", w: "說明是簡體中文、偏重中國平台；爬蟲類功能要接 OpenAI API，並在自己電腦上跑。" },
+  { n: "hyper-marketing", t: "Hyper 行銷自動化", c: "marketing", s: "gh", st: 2, by: "hyperfx-ai/marketing-skills", u: "https://github.com/hyperfx-ai/marketing-skills", d: "30 個行銷 skill：Google、Meta、TikTok、Amazon 廣告投放，IG、YouTube、Reddit 經營，SEO 研究、競品情報、廣告素材與影片生成、電子郵件。", w: "要先連上 Hyper 的 MCP 服務（hyperfx.ai 帳號）才能真的操作廣告和社群帳號；沒連就只剩流程說明。" },
   { n: "socialpost", t: "社群貼文寫手（繁中）", c: "social", s: "gh", st: 5, by: "Hao0321/claude-skill-social-post", u: "https://github.com/Hao0321/claude-skill-social-post/tree/main/chatgpt-socialpost", d: "台灣作者寫的繁中發文規則，FB、IG、Threads、YouTube、X 都能寫。先拿你的真實貼文校準口氣，一篇只講一個重點，不用「今天想分享」這類空話，交稿前逐項核對字數、換行、標點和 CTA。", w: "先貼一兩篇你以前的同類貼文給它，否則只會給「未校準初稿」。" },
   { n: "lets-social", t: "文章轉社群貼文", c: "social", s: "gh", st: 4, by: "letswritetw/lets-social", u: "https://github.com/letswritetw/lets-social", d: "台灣團隊 Let's Write 做的：把寫好的文章改寫成 IG、FB、Threads、Telegram 貼文，各平台分開寫、不是縮短版，並附 IG 知識圖卡的生圖提示詞。不會加入原文沒有的事實。", w: "要先有寫好的文章或網址；它不發文，也不直接出圖。" },
   { n: "viral-reel-generator", t: "Reels 腳本", c: "social", s: "gh", st: 4, by: "Beerspitnight/cc-skills", u: "https://github.com/Beerspitnight/cc-skills/tree/main/plugins/viral-reel-generator", d: "寫 Reels、Shorts、TikTok 逐秒腳本：先給兩個開頭鉤子，再寫畫面、口白和字卡，附封面字和貼文第一句。禁用「今天跟大家分享」這類 AI 腔。" },
-  { n: "reels-maker", t: "Reels 成片", c: "social", s: "self", st: 4, d: "把你上傳的影片片段或照片剪成 9:16 直式 Reels：依腳本排段落、橫式素材加模糊背景、燒繁中字幕和開頭字卡、統一音量，輸出 MP4、封面和字幕檔，檔案控制在 30MB 內。", w: "需要 Claude 的程式碼執行；音樂只放你確定能商用的。" },
+  { n: "reels-maker", t: "Reels 成片", c: "social", s: "self", st: 4, by: "surfcorn-web/claude-skill-list", u: "https://github.com/surfcorn-web/claude-skill-list/tree/main/reels-maker", d: "把你上傳的影片片段或照片剪成 9:16 直式 Reels：依腳本排段落、橫式素材加模糊背景、燒繁中字幕和開頭字卡、統一音量，輸出 MP4、封面和字幕檔，檔案控制在 30MB 內。", w: "需要 Claude 的程式碼執行；音樂只放你確定能商用的。" },
   { n: "social-media-context-sms", t: "社群語氣設定", c: "social", s: "gh", st: 4, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/social-media-context-sms", d: "先問你的語氣、受眾、內容支柱和常用平台，整理成一份設定。blacktwist 其他 13 個寫文時都會參考它，建議第一個裝。", w: "claude.ai 不會跨對話保存這份設定；新對話要用時，把設定內容貼給 Claude。" },
   { n: "post-writer-sms", t: "單篇貼文寫手", c: "social", s: "gh", st: 4, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/post-writer-sms", d: "依平台字數和文化寫單篇貼文，涵蓋 FB、IG、Threads、LinkedIn、X、TikTok、YouTube 社群等平台。", w: "會先找社群語氣設定，沒有的話會請你先跑 social-media-context-sms。" },
   { n: "caption-writer-sms", t: "圖片影片說明文字", c: "social", s: "gh", st: 4, by: "blacktwist/social-media-skills", u: "https://github.com/blacktwist/social-media-skills/tree/main/skills/caption-writer-sms", d: "給 IG、FB、TikTok、YouTube 這類以畫面為主的貼文寫說明文字：第一行鉤子、內文節奏、hashtag 放哪裡。" },
@@ -1042,7 +1060,7 @@ function starsEl(n, withScore) {
   return s;
 }
 function sourceOf(k) {
-  if (k.s === "self") return { url: "", label: "本站自製" };
+  if (k.s === "self") return k.u ? { url: k.u, label: k.by || "GitHub" } : { url: "", label: "本站自製" };
   if (k.s === "gh") return { url: k.u || GH_PATH[k.n] || AS, label: k.by || "GitHub" };
   if (k.s === "mp") return { url: PLUGIN_PATHS.mp[k.n] ? `${MP}/tree/main/${PLUGIN_PATHS.mp[k.n]}` : MP, label: "mattpocock/skills" };
   if (k.s === "sp") return { url: PLUGIN_PATHS.sp[k.n] ? `${SP}/tree/main/${PLUGIN_PATHS.sp[k.n]}` : SP, label: "obra/superpowers" };
@@ -1124,7 +1142,7 @@ function renderStats() {
   $("#comparePacks").textContent = `比較 ${st.packs} 種工作流`;
   $("#packTotal").textContent = st.packs;
   $("#packsNote").textContent = `每一包只放能串成完整流程的幾個 skill，點一下，下面的清單就只留這一包。${st.packs} 包加起來 ${st.packSlots} 個位置，其中${shared.join("、")}會在不只一包出現，所以實際是 ${st.packUnique} 個不重複的 skill；收錄的 ${st.total} 個裡，其他 ${st.total - st.packUnique} 個在下方完整清單。`;
-  $("#footerMeta").textContent = `資料更新：${DATA_UPDATED}，共 ${st.total} 個 skill：${st.standalone} 個獨立 skill（GitHub ${st.github}、本站自製 ${st.self}）＋${st.pluginKinds} 個 plugin 內含 ${st.plugin} 個，不含 Claude 內建。`;
+  $("#footerMeta").textContent = `資料更新：${DATA_UPDATED}，共 ${st.total} 個 skill：${st.standalone} 個獨立 skill（GitHub ${st.github}、本站自製 ${st.self}）＋從 ${st.pluginKinds} 個 plugin 挑出 ${st.plugin} 個，不含 Claude 內建。`;
   const sel = $("#categoryFilter");
   sel.append(new Option("全部分類", "all"));
   usedCats.forEach(([key, label]) => sel.append(new Option(`${label}（${LIST.filter((k) => k.c === key).length}）`, key)));
@@ -1274,7 +1292,7 @@ function cardEl(k, i, fresh) {
   const r1 = el("p");
   r1.append(el("span", null, "注意事項"), el("strong", k.w && !k.w.startsWith("自動運作") ? "warn" : null, k.w || "無特殊條件"));
   const r2 = el("p");
-  r2.append(el("span", null, "來源"), el("strong", null, g === "plugin" ? `${SRC[k.s]}（整包安裝）` : g === "self" ? "本站自製，複製安裝指令貼給 Claude" : `GitHub 獨立 skill（${sourceOf(k).label}）`));
+  r2.append(el("span", null, "來源"), el("strong", null, g === "plugin" ? `${SRC[k.s]}（整包安裝）` : g === "self" ? `本站自製（原始檔：${sourceOf(k).label}）` : `GitHub 獨立 skill（${sourceOf(k).label}）`));
   meta.append(r1, r2);
   details.append(meta, el("div", "rating-note", `${k.st} 星，${ruleOf[k.st][1]}：${ruleOf[k.st][2]}`));
   toggle.addEventListener("click", () => {
@@ -1301,7 +1319,7 @@ function cardEl(k, i, fresh) {
   });
   const src = sourceOf(k);
   let srcA;
-  if (k.s === "self") {
+  if (k.s === "self" && !src.url) {
     srcA = el("span", "source-button disabled", "本站自製");
     srcA.title = "這個 skill 是本站寫的，沒有 GitHub 來源；按「複製安裝指令」就能裝";
   } else {

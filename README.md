@@ -21,6 +21,11 @@
 3. 頁面上的數字（總數、各分類、5 星數量）都會自動重算。
 4. 修改 `const DATA_UPDATED` 的日期，頁尾就會顯示新的更新日期。
 
+## 本站自製的 skill
+
+- `reels-maker/`：Reels 成片。把影片片段或照片剪成 9:16 直式短影音，燒繁中字幕和開頭字卡、統一音量。
+  安裝方式：把 `reels-maker` 資料夾壓成 ZIP，到 Claude 的 Customize → Skills →「+」→ Create skill → Upload a skill 上傳；或在網頁卡片上按「複製安裝指令」。
+
 ## 收錄範圍
 
 不含 Claude 內建的 skill（Word、Excel、PPT、PDF 等），因為那些不用安裝。
