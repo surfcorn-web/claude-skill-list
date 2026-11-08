@@ -507,10 +507,10 @@ body::after { background: radial-gradient(32vmax 28vmax at 72% 22%, var(--glow-c
         <button class="button primary" type="button" id="showFiveStar">看 5 星 skill（7 個）</button>
         <a class="button secondary" href="#starter-packs" id="comparePacks">比較 6 種工作流</a>
       </div>
-      <p class="microcopy">目前收錄 <strong id="headlineTotal">103</strong> 個 skill：<strong id="ghCount">59</strong> 個獨立 skill（GitHub <span id="ghOnly">58</span>、本站自製 <span id="selfCount">1</span>），加上從 <span id="pluginKinds">3</span> 個 plugin 裡挑出的 <strong id="pluginCount">44</strong> 個（plugin 整包共 <span id="pluginBundle">55</span> 個；不含 Claude 內建）。<span id="packTotal">6</span> 個工作流套餐從中挑了 <strong id="packUnique">28</strong> 個最常用的，其餘都在下方的完整清單。</p>
+      <p class="microcopy">目前收錄 <strong id="headlineTotal">104</strong> 個 skill：<strong id="ghCount">59</strong> 個獨立 skill（GitHub <span id="ghOnly">58</span>、本站自製 <span id="selfCount">1</span>），加上從 <span id="pluginKinds">3</span> 個 plugin 裡挑出的 <strong id="pluginCount">45</strong> 個（plugin 整包共 <span id="pluginBundle">56</span> 個；不含 Claude 內建）。<span id="packTotal">6</span> 個工作流套餐從中挑了 <strong id="packUnique">28</strong> 個最常用的，其餘都在下方的完整清單。</p>
       <dl class="stat-row" aria-label="Skill 統計摘要">
         <div><dt>獨立 skill</dt><dd id="statGh">59</dd></div>
-        <div><dt>從 <span id="statPluginKinds">3</span> 個 plugin 挑出</dt><dd id="statPlugin">44</dd></div>
+        <div><dt>從 <span id="statPluginKinds">3</span> 個 plugin 挑出</dt><dd id="statPlugin">45</dd></div>
         <div><dt>5★ 首選</dt><dd id="fiveStarCount">7</dd></div>
       </dl>
     </div>
@@ -523,7 +523,7 @@ body::after { background: radial-gradient(32vmax 28vmax at 72% 22%, var(--glow-c
       <a class="route-all" href="#all" id="routeAll">
         <strong>完整清單</strong>
         <span>全部攤開，依分類、星等篩選</span>
-        <em id="routeAllCount">全部 103 個</em>
+        <em id="routeAllCount">全部 104 個</em>
       </a>
       <nav class="route-cats" id="routeCats" aria-label="依分類打開完整清單"></nav>
       <p>如果你在做課程專題，先從「系統網頁包」開始。</p>
@@ -535,7 +535,7 @@ body::after { background: radial-gradient(32vmax 28vmax at 72% 22%, var(--glow-c
   <section class="section starter-section" id="starter-packs" aria-labelledby="packsTitle">
     <div class="section-heading">
       <h2 id="packsTitle">先選任務，再看需要哪些 skills。</h2>
-      <p id="packsNote">每一包只放能串成完整流程的幾個 skill，點一下，下面的清單就只留這一包。6 包加起來 33 個位置，其中Reels 腳本、Reels 成片、繁中去 AI 味、逼問到想清楚會在不只一包出現，所以實際是 28 個不重複的 skill；收錄的 103 個裡，其他 75 個在下方完整清單。</p>
+      <p id="packsNote">每一包只放能串成完整流程的幾個 skill，點一下，下面的清單就只留這一包。6 包加起來 33 個位置，其中Reels 腳本、Reels 成片、繁中去 AI 味、逼問到想清楚會在不只一包出現，所以實際是 28 個不重複的 skill；收錄的 104 個裡，其他 76 個在下方完整清單。</p>
     </div>
     <div class="pack-grid" id="packGrid"></div>
   </section>
@@ -543,7 +543,7 @@ body::after { background: radial-gradient(32vmax 28vmax at 72% 22%, var(--glow-c
   <section class="section category-section" id="categories" aria-labelledby="catTitle">
     <div class="section-heading">
       <h2 id="catTitle">或依功能分類看全部。</h2>
-      <p id="catNote">收錄的 103 個分成 11 類，點一類就在下面只顯示那一類。分類是全部，套餐是挑過的精選，所以數字不一樣：「社群行銷」共 18 個，社群經營包只用了其中 6 個，另外 1 個來自別的分類；「簡報」共 2 個，簡報企劃包只用了其中 2 個，另外 3 個來自別的分類。</p>
+      <p id="catNote">收錄的 104 個分成 11 類，點一類就在下面只顯示那一類。分類是全部，套餐是挑過的精選，所以數字不一樣：「社群行銷」共 18 個，社群經營包只用了其中 6 個，另外 1 個來自別的分類；「簡報」共 2 個，簡報企劃包只用了其中 2 個，另外 3 個來自別的分類。</p>
     </div>
     <div class="cat-grid" id="catGrid"></div>
   </section>
@@ -643,7 +643,7 @@ body::after { background: radial-gradient(32vmax 28vmax at 72% 22%, var(--glow-c
         <span class="source-badge">Plugin</span>
         <h3>一次裝好一整包</h3>
         <p>在 Claude 對話裡說「幫我安裝 Superpowers plugin」，或到 <a href="https://claude.com/marketplace" target="_blank" rel="noopener">claude.com/marketplace</a> 搜尋名稱。</p>
-        <p class="small" id="pluginNote">三個 plugin 整包共 55 個 skill，本站挑出 44 個：Skills For Real Engineers（Matt Pocock） 整包 38 個、收錄 30 個；Superpowers 整包 15 個、收錄 12 個；ffmpeg-llm 2 個全收。沒收的多半是重複，或只適合工程師。裝 plugin 會整包裝進來。前兩個主要給寫程式的人，能不能裝要看你的方案和 App 版本。</p>
+        <p class="small" id="pluginNote">三個 plugin 整包共 56 個 skill，本站挑出 45 個：Skills For Real Engineers（Matt Pocock） 整包 39 個、收錄 31 個；Superpowers 整包 15 個、收錄 12 個；ffmpeg-llm 2 個全收。沒收的多半是重複，或只適合工程師。裝 plugin 會整包裝進來。前兩個主要給寫程式的人，能不能裝要看你的方案和 App 版本。</p>
       </div>
     </div>
   </section>
@@ -664,7 +664,7 @@ body::after { background: radial-gradient(32vmax 28vmax at 72% 22%, var(--glow-c
     <strong>謝小明的 Claude Skill 推薦清單</strong>
     <p>把選擇變簡單，把工具用在真正需要的地方。</p>
   </div>
-  <p id="footerMeta">資料更新：2026-11-08，共 103 個 skill：59 個獨立 skill（GitHub 58、本站自製 1）＋從 3 個 plugin 挑出 44 個，不含 Claude 內建。</p>
+  <p id="footerMeta">資料更新：2026-11-08，共 104 個 skill：59 個獨立 skill（GitHub 58、本站自製 1）＋從 3 個 plugin 挑出 45 個，不含 Claude 內建。</p>
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -850,7 +850,7 @@ ffmpeg -y -ss 1.2 -i reel.mp4 -frames:v 1 -q:v 2 cover.jpg
 </script>
 <script>
 const SRC = { gh: "GitHub", self: "本站自製", mp: "Plugin：Skills For Real Engineers", sp: "Plugin：Superpowers", ff: "Plugin：ffmpeg-llm", builtin: "Claude 內建", sys: "Claude 內建" };
-const PLUGIN_TOTAL = { mp: 38, sp: 15, ff: 2 }; /* 各 plugin 整包的 skill 數 */
+const PLUGIN_TOTAL = { mp: 39, sp: 15, ff: 2 }; /* 各 plugin 整包的 skill 數 */
 const SRC_GROUP = { gh: "gh", self: "self", mp: "plugin", sp: "plugin", ff: "plugin", builtin: "builtin", sys: "builtin" };
 const BADGE = { gh: "獨立 skill", self: "獨立 skill（自製）", mp: "Matt Pocock plugin", sp: "Superpowers plugin", ff: "ffmpeg-llm plugin" };
 const CATS = [
@@ -1013,7 +1013,6 @@ const SKILLS = [
   { n: "implement", t: "照工作單實作", c: "dev", s: "mp", st: 1, u: MP, d: "依規格或工作單把功能寫出來。" },
   { n: "implement-spec", t: "照規格實作", c: "dev", s: "mp", st: 1, u: MP, d: "專門接 to-spec 和 to-tickets 的產出，把規格寫成程式。" },
   { n: "pr", t: "寫 PR 說明", c: "dev", s: "mp", st: 1, u: MP, d: "幫你寫 GitHub Pull Request 的說明內容。" },
-  { n: "resolving-merge-conflicts", t: "解 Git 合併衝突", c: "dev", s: "mp", st: 1, u: MP, d: "處理進行中的 merge 或 rebase 衝突。" },
   { n: "codebase-design", t: "模組設計", c: "dev", s: "mp", st: 1, u: MP, d: "設計模組介面、找出可以簡化的地方，讓程式更好測、更好讀。" },
   { n: "improve-codebase-architecture", t: "架構改善報告", c: "dev", s: "mp", st: 1, u: MP, d: "掃描整個程式庫，產出一份視覺化的改善建議報告。" },
   { n: "domain-modeling", t: "領域模型", c: "dev", s: "mp", st: 1, u: MP, d: "整理專案用語、名詞表和架構決策紀錄（ADR）。" },
@@ -1029,6 +1028,8 @@ const SKILLS = [
   { n: "setup-claude", t: "新手設定導覽", c: "meta", s: "sys", st: 3, d: "依你的職務推薦 plugin、試用 skill、連接常用工具，剛開始用 Claude 的同學可以從這裡開始。" },
   { n: "handoff", t: "交接文件", c: "meta", s: "mp", st: 3, u: MP, d: "對話太長、要換新對話時，把目前進度整理成交接文件，貼到新對話就能接著做。" },
   { n: "claude-handoff", t: "交給背景代理", c: "meta", s: "mp", st: 2, u: MP, d: "把目前的工作直接交給一個新的背景代理接手。", w: "作者標示為開發中。" },
+  { n: "chief-of-staff", t: "長期目標總管", c: "meta", s: "mp", st: 2, u: MP, d: "給它一個要做很久的目標，它當總管：把工作分給子代理、建議定期排程，並把決策和經驗記在一個 wiki 資料夾，換新對話也接得上。", w: "作者標示為開發中，較新、plugin 不一定有，可單獨安裝。要能開子代理，最適合在 Claude Code 用。" },
+  { n: "software-factory", t: "AI 軟體工廠設計", c: "dev", s: "mp", st: 1, u: MP, d: "規劃一套讓 AI 代理把工單自動變成程式碼的系統：先統一用語，再一格一格決定工單系統、Git 平台、執行機器和監控要用哪個產品。", w: "作者標示為開發中，較新、plugin 不一定有，可單獨安裝。偏工程團隊用。" },
   { n: "import-memory", t: "匯入其他 AI 的記憶", c: "meta", s: "builtin", st: 2, d: "把 ChatGPT 等其他 AI 匯出的記憶內容匯入 Claude，通常只用一次。" },
   { n: "morning", t: "每日晨報", c: "meta", s: "builtin", st: 2, d: "把今天的行程和待辦整理成一頁，也可以設定成平日自動產生。" },
   { n: "explain-usage", t: "用量說明", c: "meta", s: "sys", st: 2, d: "用一張圖說明這次對話的 token 都花在哪裡。" },
@@ -1114,7 +1115,6 @@ const USAGE = {
   "implement": "照〔這些工作單〕把功能實作出來",
   "implement-spec": "照〔這份規格〕把程式寫出來",
   "pr": "替〔這次的改動〕寫 PR 說明",
-  "resolving-merge-conflicts": "解決目前的 Git 合併衝突，並說明保留了哪些改動",
   "codebase-design": "重新設計〔這個模組〕的介面，讓它更好測試",
   "improve-codebase-architecture": "掃描〔這個專案〕，找出最值得改善的架構問題",
   "domain-modeling": "整理〔這個系統〕的專有名詞和資料關係",
@@ -1140,6 +1140,8 @@ const USAGE = {
   "i-have-adhd": "開啟精簡行動模式，先告訴我下一步要做什麼",
   "handoff": "把目前這段對話整理成交接文件，讓下一個對話可以接著做",
   "claude-handoff": "把〔這個任務〕交給背景代理繼續做",
+  "chief-of-staff": "當這個長期目標的總管：〔目標，例如三個月內把官網改版上線〕，先跟我確認 wiki 資料夾要放哪裡",
+  "software-factory": "規劃一套 AI 軟體工廠，我想解決〔問題，例如工單沒人分類、PR 等很久沒人審〕，一格一格決定要用哪些服務",
   "writing-skills": "把〔我常做的流程〕寫成一個 skill",
   "writing-for-agents": "改寫〔這份說明文件〕，讓 AI 更容易照著做",
   "ask-matt": "我想〔要做的事〕，該用哪個 skill？",
@@ -1182,7 +1184,7 @@ const usageOf = (k) => `用 ${k.n} skill 幫我${USAGE[k.n] || "〔說明你要�
 const ENV = {
   "pixel2motion": "code", "design-taste-frontend": "code", "impeccable": "code", "google-skills": "code", "craft-skill": "code",
   "codex-ppt": "key", "fal-skills": "key", "scenario-skills": "key", "hyper-marketing": "key", "yao-geo-skills": "key", "garden-skills": "key",
-  "css-animation": "chrome", "harness-skills": "key", "gpt-image": "key", "codex-imagegen": "code"
+  "css-animation": "chrome", "harness-skills": "key", "gpt-image": "key", "codex-imagegen": "code", "chief-of-staff": "code"
 };
 const ENV_LABEL = { code: "需在 Claude Code 用", key: "需 API 金鑰或帳號", chrome: "搭配 Claude in Chrome" };
 /* Built-in skills are not listed. */
