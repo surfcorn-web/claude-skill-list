@@ -160,7 +160,8 @@ a { color: inherit; text-underline-offset: .2em; }
 
 /* ---------- Explorer ---------- */
 .category-section { padding-top: 24px; padding-bottom: 24px; }
-.cat-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .8rem; }
+.cat-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .8rem; }
+.cat-grid .cat-tile .top { flex-direction: column; align-items: flex-start; gap: 0; }
 .cat-tile { min-height: 118px; padding: 1rem; display: flex; flex-direction: column; gap: .3rem; border: 1px solid var(--line); border-radius: var(--r-md); color: var(--ink); background: var(--card); text-align: left; cursor: pointer; transition: border-color .18s, box-shadow .18s; }
 .cat-tile:focus-visible { border-color: var(--blue); box-shadow: var(--shadow-soft); }
 @media (hover: hover) { .cat-tile:hover { border-color: var(--blue); box-shadow: var(--shadow-soft); } }
@@ -418,7 +419,11 @@ body::after { background: radial-gradient(32vmax 28vmax at 72% 22%, var(--glow-c
   .button:hover, .pack-card:hover, .cat-tile:hover, .skill-card:hover, .route-cats a:hover { transform: none !important; }
 }
 @media (max-width: 1240px) and (min-width: 1051px) {
-  .cat-tile .top { flex-direction: column; align-items: flex-start; gap: 0; }
+  .cat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .cat-grid .cat-tile .top { flex-direction: row; align-items: baseline; gap: .4rem; }
+}
+@media (max-width: 1050px) and (min-width: 761px) {
+  .cat-grid .cat-tile .top { flex-direction: row; align-items: baseline; gap: .4rem; }
 }
 @media (max-width: 1050px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 3rem; padding-top: 60px; min-height: 0; }
@@ -502,9 +507,9 @@ body::after { background: radial-gradient(32vmax 28vmax at 72% 22%, var(--glow-c
         <button class="button primary" type="button" id="showFiveStar">看 5 星 skill（7 個）</button>
         <a class="button secondary" href="#starter-packs" id="comparePacks">比較 6 種工作流</a>
       </div>
-      <p class="microcopy">目前收錄 <strong id="headlineTotal">100</strong> 個 skill：<strong id="ghCount">56</strong> 個獨立 skill（GitHub <span id="ghOnly">55</span>、本站自製 <span id="selfCount">1</span>），加上從 <span id="pluginKinds">3</span> 個 plugin 裡挑出的 <strong id="pluginCount">44</strong> 個（plugin 整包共 <span id="pluginBundle">55</span> 個；不含 Claude 內建）。<span id="packTotal">6</span> 個工作流套餐從中挑了 <strong id="packUnique">28</strong> 個最常用的，其餘都在下方的完整清單。</p>
+      <p class="microcopy">目前收錄 <strong id="headlineTotal">103</strong> 個 skill：<strong id="ghCount">59</strong> 個獨立 skill（GitHub <span id="ghOnly">58</span>、本站自製 <span id="selfCount">1</span>），加上從 <span id="pluginKinds">3</span> 個 plugin 裡挑出的 <strong id="pluginCount">44</strong> 個（plugin 整包共 <span id="pluginBundle">55</span> 個；不含 Claude 內建）。<span id="packTotal">6</span> 個工作流套餐從中挑了 <strong id="packUnique">28</strong> 個最常用的，其餘都在下方的完整清單。</p>
       <dl class="stat-row" aria-label="Skill 統計摘要">
-        <div><dt>獨立 skill</dt><dd id="statGh">56</dd></div>
+        <div><dt>獨立 skill</dt><dd id="statGh">59</dd></div>
         <div><dt>從 <span id="statPluginKinds">3</span> 個 plugin 挑出</dt><dd id="statPlugin">44</dd></div>
         <div><dt>5★ 首選</dt><dd id="fiveStarCount">7</dd></div>
       </dl>
@@ -518,7 +523,7 @@ body::after { background: radial-gradient(32vmax 28vmax at 72% 22%, var(--glow-c
       <a class="route-all" href="#all" id="routeAll">
         <strong>完整清單</strong>
         <span>全部攤開，依分類、星等篩選</span>
-        <em id="routeAllCount">全部 100 個</em>
+        <em id="routeAllCount">全部 103 個</em>
       </a>
       <nav class="route-cats" id="routeCats" aria-label="依分類打開完整清單"></nav>
       <p>如果你在做課程專題，先從「系統網頁包」開始。</p>
@@ -530,7 +535,7 @@ body::after { background: radial-gradient(32vmax 28vmax at 72% 22%, var(--glow-c
   <section class="section starter-section" id="starter-packs" aria-labelledby="packsTitle">
     <div class="section-heading">
       <h2 id="packsTitle">先選任務，再看需要哪些 skills。</h2>
-      <p id="packsNote">每一包只放能串成完整流程的幾個 skill，點一下，下面的清單就只留這一包。6 包加起來 33 個位置，其中Reels 腳本、Reels 成片、繁中去 AI 味、逼問到想清楚會在不只一包出現，所以實際是 28 個不重複的 skill；收錄的 100 個裡，其他 72 個在下方完整清單。</p>
+      <p id="packsNote">每一包只放能串成完整流程的幾個 skill，點一下，下面的清單就只留這一包。6 包加起來 33 個位置，其中Reels 腳本、Reels 成片、繁中去 AI 味、逼問到想清楚會在不只一包出現，所以實際是 28 個不重複的 skill；收錄的 103 個裡，其他 75 個在下方完整清單。</p>
     </div>
     <div class="pack-grid" id="packGrid"></div>
   </section>
@@ -538,7 +543,7 @@ body::after { background: radial-gradient(32vmax 28vmax at 72% 22%, var(--glow-c
   <section class="section category-section" id="categories" aria-labelledby="catTitle">
     <div class="section-heading">
       <h2 id="catTitle">或依功能分類看全部。</h2>
-      <p id="catNote">收錄的 100 個分成 10 類，點一類就在下面只顯示那一類。分類是全部，套餐是挑過的精選，所以數字不一樣：「社群行銷」共 18 個，社群經營包只用了其中 6 個，另外 1 個來自別的分類；「簡報」共 2 個，簡報企劃包只用了其中 2 個，另外 3 個來自別的分類。</p>
+      <p id="catNote">收錄的 103 個分成 11 類，點一類就在下面只顯示那一類。分類是全部，套餐是挑過的精選，所以數字不一樣：「社群行銷」共 18 個，社群經營包只用了其中 6 個，另外 1 個來自別的分類；「簡報」共 2 個，簡報企劃包只用了其中 2 個，另外 3 個來自別的分類。</p>
     </div>
     <div class="cat-grid" id="catGrid"></div>
   </section>
@@ -659,7 +664,7 @@ body::after { background: radial-gradient(32vmax 28vmax at 72% 22%, var(--glow-c
     <strong>謝小明的 Claude Skill 推薦清單</strong>
     <p>把選擇變簡單，把工具用在真正需要的地方。</p>
   </div>
-  <p id="footerMeta">資料更新：2026-11-08，共 100 個 skill：56 個獨立 skill（GitHub 55、本站自製 1）＋從 3 個 plugin 挑出 44 個，不含 Claude 內建。</p>
+  <p id="footerMeta">資料更新：2026-11-08，共 103 個 skill：59 個獨立 skill（GitHub 58、本站自製 1）＋從 3 個 plugin 挑出 44 個，不含 Claude 內建。</p>
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -850,7 +855,7 @@ const SRC_GROUP = { gh: "gh", self: "self", mp: "plugin", sp: "plugin", ff: "plu
 const BADGE = { gh: "獨立 skill", self: "獨立 skill（自製）", mp: "Matt Pocock plugin", sp: "Superpowers plugin", ff: "ffmpeg-llm plugin" };
 const CATS = [
   /* 第一排：行銷與內容 */
-  ["marketing", "行銷與 SEO"], ["social", "社群行銷"], ["media", "影音與 AI 生成"], ["write", "寫作與研究"], ["slides", "簡報"],
+  ["marketing", "行銷與 SEO"], ["social", "社群行銷"], ["image", "圖片美工"], ["media", "影音剪輯"], ["write", "寫作與研究"], ["slides", "簡報"],
   /* 第二排：思考、網頁與工具 */
   ["think", "思考與企劃"], ["design", "設計與網頁"], ["motion", "動效與動畫"], ["dev", "程式開發"], ["meta", "Claude 使用與管理"],
   /* 只有 Claude 內建的 skill 用到，不會顯示 */
@@ -859,7 +864,7 @@ const CATS = [
 const CAT_DESC = {
   marketing: "文案、廣告、品牌語氣、SEO／GEO、數據追蹤",
   social: "社群貼文、說明文字、輪播、Reels 腳本與成片", slides: "學術簡報與 AI 生圖簡報", write: "查資料、寫文章、潤稿",
-  think: "逼問想法、做問卷、腦力激盪", design: "網頁設計、高質感排版、介面檢查", motion: "網頁動畫、微互動、手勢與 Logo 動畫", media: "剪輯影片、AI 生圖與生影片",
+  think: "逼問想法、做問卷、腦力激盪", design: "網頁設計、高質感排版、介面檢查", motion: "網頁動畫、微互動、手勢與 Logo 動畫", image: "AI 生圖、提示詞庫、商品照與海報素材", media: "用白話剪輯、轉檔、壓縮影片",
   dev: "規格、測試、除錯、審查、Git", meta: "Claude 使用技巧、交接、自己做 skill", office: "文件與辦公", browser: "瀏覽器與電腦操作"
 };
 const RUBRIC = [
@@ -942,8 +947,11 @@ const SKILLS = [
   { n: "design-taste-frontend", t: "Taste 反模板網頁設計", c: "design", s: "gh", st: 3, by: "leonxlnx/taste-skill", u: "https://github.com/leonxlnx/taste-skill", d: "專做公司官網、產品頁：文案有自己的口吻、一屏一個重點、用真實照片和產品畫面，首屏進場加一兩個亮點動畫，最後還會在瀏覽器裡實際檢查成品。", w: "整包約 40MB（含大量範例圖），超過 claude.ai 的上傳上限，建議在 Claude Code 用。" },
   { n: "impeccable", t: "Impeccable 設計完整版", c: "design", s: "gh", st: 4, by: "pbakaus/impeccable", u: "https://github.com/pbakaus/impeccable", d: "impeccable 的完整版：用 polish、bolder 調整風格，用 critique、audit 審查，並在交付前抓出 AI 味的設計。比本清單的 impeccable-lite 多了指令和檢查腳本。", w: "完整版要在 Claude Code 用 npx impeccable install 安裝；在 claude.ai 上用 impeccable-lite 就好。" },
   { n: "garden-skills", t: "Garden 中文技能包", c: "design", s: "gh", st: 3, by: "ConardLi/garden-skills", u: "https://github.com/ConardLi/garden-skills", d: "6 個 skill：把素材排成漂亮的單頁 HTML 文章、把文章做成像影片的網頁簡報、用程式做動效影片、前端視覺設計、GPT Image 2 生圖提示詞、本機知識庫檢索。", w: "說明是簡體中文；生圖和配音要另外接 API，部分功能要在自己電腦上跑。" },
-  { n: "fal-skills", t: "fal.ai 生圖生影片", c: "media", s: "gh", st: 3, by: "fal-ai-community/skills", u: "https://github.com/fal-ai-community/skills", d: "fal.ai 的 36 個 skill：商品攝影、廣告短片、Reels 素材、分鏡轉短片、角色設計、配樂。會告訴 Claude 該挑哪個模型、提示詞怎麼下。", w: "真的要出圖、出影片需要 fal.ai 帳號和 FAL_KEY（按量計費），還要允許程式連外網；只想學怎麼下提示詞，先裝 fal-prompting 就好。" },
-  { n: "scenario-skills", t: "Scenario AI 素材生成", c: "media", s: "gh", st: 2, by: "scenario-labs/skills", u: "https://github.com/scenario-labs/skills", d: "Scenario 平台的 175 個 skill：AI 生圖、生影片、做 3D 模型、配樂、廣告短片，另外有一大批 Unity、Godot、Unreal 遊戲開發指南。", w: "生成功能要 Scenario 帳號和 API 金鑰（付費）；遊戲引擎那部分是給做遊戲的人。" },
+  { n: "ai-image-prompts-skill", t: "AI 生圖提示詞庫（一萬組）", c: "image", s: "gh", st: 4, by: "YouMind-OpenLab/ai-image-prompts-skill", u: "https://github.com/YouMind-OpenLab/ai-image-prompts-skill", d: "從一萬多組真實社群提示詞裡，依用途挑出最適合的 3 組：商品行銷、社群貼文、海報、電商主圖、YouTube 縮圖、頭像、資訊圖表等，附範例圖連結；也能把你的文章或腳本改寫成專屬提示詞。Nano Banana、GPT Image、Midjourney 等生圖工具都能用。", w: "整包約 14MB（含提示詞資料），要用 ZIP 上傳；在 claude.ai 上提示詞庫不會自動更新。提示詞是英文，產出後要自己貼到生圖工具。" },
+  { n: "gpt-image", t: "GPT Image 生圖與提示詞庫", c: "image", s: "gh", st: 3, by: "wuyoscar/gpt-image2-skill", u: "https://github.com/wuyoscar/gpt-image2-skill", d: "兩個 skill：gpt-image 用 GPT Image 2／2.5 生圖和改圖（海報、字體設計、照參考圖修改、局部重繪），附 20 多類提示詞範例庫；get-prompt-from-image 把你上傳的參考圖反推成生圖提示詞。", w: "真的要出圖得用自己的 OpenAI API 金鑰（按張計費）、Python 3.11，並允許程式連外網；反推提示詞和範例庫不用金鑰就能用。" },
+  { n: "codex-imagegen", t: "Codex 生圖（用 ChatGPT 訂閱）", c: "image", s: "gh", st: 2, by: "JunSeo99/claude-skill-codex-imagegen", u: "https://github.com/JunSeo99/claude-skill-codex-imagegen", d: "在 Claude Code 裡直接生圖：先簡短問你要什麼，給三個不同視覺方向比較，挑一個再細修，也能做風格一致的整組圖示和真正透明背景的 PNG。出圖用你現有的 Codex（ChatGPT）訂閱，不用另外申請 API 金鑰。", w: "要在 Claude Code 用，電腦上還要裝好並登入 Codex 的指令工具（需要 ChatGPT 付費方案）；claude.ai 網頁版用不了。" },
+  { n: "fal-skills", t: "fal.ai 生圖生影片", c: "image", s: "gh", st: 3, by: "fal-ai-community/skills", u: "https://github.com/fal-ai-community/skills", d: "fal.ai 的 36 個 skill：商品攝影、廣告短片、Reels 素材、分鏡轉短片、角色設計、配樂。會告訴 Claude 該挑哪個模型、提示詞怎麼下。", w: "真的要出圖、出影片需要 fal.ai 帳號和 FAL_KEY（按量計費），還要允許程式連外網；只想學怎麼下提示詞，先裝 fal-prompting 就好。" },
+  { n: "scenario-skills", t: "Scenario AI 素材生成", c: "image", s: "gh", st: 2, by: "scenario-labs/skills", u: "https://github.com/scenario-labs/skills", d: "Scenario 平台的 175 個 skill：AI 生圖、生影片、做 3D 模型、配樂、廣告短片，另外有一大批 Unity、Godot、Unreal 遊戲開發指南。", w: "生成功能要 Scenario 帳號和 API 金鑰（付費）；遊戲引擎那部分是給做遊戲的人。" },
   { n: "google-skills", t: "Google 官方技能包", c: "dev", s: "gh", st: 2, by: "google/skills", u: "https://github.com/google/skills", d: "Google 官方的 192 個 skill，涵蓋 Google Cloud、Firebase、Gemini API、BigQuery、GKE、Google 登入，讓 Claude 照官方做法設定和部署。", w: "大多要 Google Cloud 帳號和 gcloud 指令，適合在 Claude Code 用；只挑用得到的幾個裝。" },
   { n: "harness-skills", t: "Harness CI/CD 技能包", c: "dev", s: "gh", st: 1, by: "harness/harness-skills", u: "https://github.com/harness/harness-skills", d: "Harness 官方的 73 個 skill：用白話產生 CI/CD 流水線設定（YAML）、建立觸發和範本、診斷部署失敗，還有 DORA 指標、成本和資安報告。", w: "大多要先有 Harness 帳號並架好它的 MCP 伺服器才能操作；沒在用 Harness 平台就用不到。" },
   { n: "craft-skill", t: "Craft CMS 管理", c: "dev", s: "gh", st: 1, by: "happycog/craft-skill", u: "https://github.com/happycog/craft-skill", d: "讓 AI 用指令管理 Craft CMS 網站：文章、欄位、區塊、使用者，以及 Commerce 的商品和訂單。", w: "要先有架好的 Craft CMS 網站並裝它的 PHP 套件；沒在用 Craft 就用不到。" },
@@ -1164,14 +1172,17 @@ const USAGE = {
   "content-pattern-analyzer-sms": "比較〔這批貼文〕，找出哪種主題、格式和開頭最有效",
   "audience-growth-tracker-sms": "追蹤〔這三個月〕的粉絲成長，找出漲粉和掉粉的原因",
   "optimization-advisor-sms": "根據〔最近的成效〕給我下個月的經營優化建議",
-  "harness-skills": "產生一條〔建置後部署到測試環境〕的 Harness CI/CD 流水線設定（YAML）"
+  "harness-skills": "產生一條〔建置後部署到測試環境〕的 Harness CI/CD 流水線設定（YAML）",
+  "gpt-image": "參考〔我上傳的圖片〕，寫一段做〔產品〕直式宣傳海報的 GPT Image 提示詞",
+  "codex-imagegen": "替〔網站或 App〕的〔首頁主視覺〕給我三個不同風格方向，選定後再做一組風格一致的圖示",
+  "ai-image-prompts-skill": "找 3 組適合〔產品〕電商主圖的生圖提示詞，附範例圖，再改成〔我的品牌風格〕"
 };
 const usageOf = (k) => `用 ${k.n} skill 幫我${USAGE[k.n] || "〔說明你要做的事〕"}`;
 /* 執行環境：在 claude.ai 上不能單獨順利使用的，卡片上直接標出來 */
 const ENV = {
   "pixel2motion": "code", "design-taste-frontend": "code", "impeccable": "code", "google-skills": "code", "craft-skill": "code",
   "codex-ppt": "key", "fal-skills": "key", "scenario-skills": "key", "hyper-marketing": "key", "yao-geo-skills": "key", "garden-skills": "key",
-  "css-animation": "chrome", "harness-skills": "key"
+  "css-animation": "chrome", "harness-skills": "key", "gpt-image": "key", "codex-imagegen": "code"
 };
 const ENV_LABEL = { code: "需在 Claude Code 用", key: "需 API 金鑰或帳號", chrome: "搭配 Claude in Chrome" };
 /* Built-in skills are not listed. */
